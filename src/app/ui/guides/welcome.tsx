@@ -1,5 +1,5 @@
-import React from "react";
-import CodeExample from "../code-example";
+import React from 'react'
+import CodeExample from '../code-example'
 
 export default function GuidesWelcome() {
   return (
@@ -10,19 +10,17 @@ export default function GuidesWelcome() {
         id="welcome-what-is-it"
         expandLevel={2}
         description={
-          <p>
-            Psychic is a node/typescript MVC-based microframework built on top
-            of&nbsp;
-            <a href="https://expressjs.com">expressjs</a> and&nbsp;
-            <a href="https://github.com/sequelize/sequelize-typescript">
-              sequelize-typescript
-            </a>
-            . It provides a light wrapper around express, gifting you a custom
-            routing mechanism which allows one to compose routes much like they
-            would in Ruby on Rails, Laravel, pheonix, or most other popular
-            MVC-based web frameworks, and then uses express to direct the
-            defined routes to controller methods.
-          </p>
+          <>
+            <p>
+              Psychic is a node/typescript MVC-based web framework built on top of&nbsp;
+              <a href="https://expressjs.com">expressjs</a> and&nbsp;
+              <a href="https://github.com/avocadojesus/dream">dream ORM</a>. It provides a light wrapper
+              around express, gifting you a custom routing mechanism which allows one to compose routes much
+              like they would in Ruby on Rails, Laravel, pheonix, or most other popular MVC-based web
+              frameworks, and then uses express to direct the defined routes to controller methods.
+            </p>
+            <p></p>
+          </>
         }
         codeExample={`\
 // conf/routes.ts
@@ -45,44 +43,35 @@ export default (r: PsychicRouter) => {
         expandLevel={2}
         description={
           <p>
-            Additionally, as previously mentioned, it provides a helpful
-            integration with the sequelize ORM by utilizing the
-            sequelize-typescript library, which brings the sequelize library
-            into the modern era of node ORMs, leveraging decorators for driving
-            associations, model hooks, and column descriptors.
+            In addition, Psychic provides a full-force typescript/node/postgres driven ORM that runs on top of{' '}
+            <a href="NEED_LINK">Kysely</a>. Modeled after the active record provided by Ruby on Rails, Dream
+            provides a full suite of powerful features with a very robust typing system to aid you in your
+            code journeys.
           </p>
         }
         codeExample={`\
-import { Sequelize, Table, Column, Model, HasMany, IsUUID, PrimaryKey, DataType, BeforeUpdate, BeforeCreate, Contains } from 'sequelize-typescript'
-import { UUID, Hash, PsychicModel } from 'psychic'
-import Composition from './composition'
+import { BeforeCreate, BeforeUpdate, Column, Validates, Hash, dream } from 'psychic'
 
-@Table({ tableName: 'users', underscored: true })
-export default class User extends PsychicModel {
-  @IsUUID(4)
-  @PrimaryKey
-  @Column({ defaultValue: Sequelize.literal("uuid_generate_v4()") })
-  id: UUID
+const Dream = dream('users')
+export default class User extends Dream {
+  public id: number
+  public name: string
+  public created_at: Date
+  public updated_at: Date
 
-  @Contains('@')
-  @Column(DataType.TEXT)
-  email: string
+  @Validates('contains', '@')
+  @Validates('presence')
+  public email: string
 
-  @HasMany(() => Composition)
-  compositions: Composition[]
+  @Validates('length', { min: 4, max: 18 })
+  public password_digest: string
+  public password?: string | null
 
-  @Column(DataType.TEXT)
-  password_digest: string
-
-  @Column(DataType.VIRTUAL)
-  public password: string
-
-  @BeforeCreate
-  @BeforeUpdate
-  static async hashPass(user: User) {
-    if (user.password)
-      user.password_digest = await Hash.gen(user.password)
-    user.password = undefined
+  @BeforeCreate()
+  @BeforeUpdate()
+  public async hashPass() {
+    if (this.password) this.password_digest = await Hash.gen(this.password)
+    this.password = undefined
   }
 
   public async checkPassword(password: string) {
@@ -93,5 +82,5 @@ export default class User extends PsychicModel {
 `}
       ></CodeExample>
     </React.Fragment>
-  );
+  )
 }

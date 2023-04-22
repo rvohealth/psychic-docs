@@ -1,5 +1,5 @@
-import React from "react";
-import CodeExample from "../code-example";
+import React from 'react'
+import CodeExample from '../code-example'
 
 export default function GuidesGettingStarted() {
   return (
@@ -11,14 +11,13 @@ export default function GuidesGettingStarted() {
         expandLevel={2}
         description={
           <p>
-            Once the psychic cli is installed globally, you can use it to create
-            a new psychic app locally.&nbsp; To do so, open your terminal and
-            type the following in a directory of your choosing:
+            Once the psychic cli is installed globally, you can use it to create a new psychic app locally. To
+            do so, open your terminal and type the following in a directory of your choosing:
           </p>
         }
         codeExample={`\
 cd ~/Sites # or another folder of your choosing
-psychic new myapp --api --ws --redis
+psy new myapp --api --ws --redis
 `}
         language="bash"
         theme="dark"
@@ -32,18 +31,15 @@ psychic new myapp --api --ws --redis
         description={
           <React.Fragment>
             <p>
-              After creating a new app, you should first make sure to configure
-              your environment and get your database set up. To use psychic, you
-              must first have postgresql installed and running on your local
-              machine.
+              After creating a new app, you should first make sure to configure your environment and get your
+              database set up. To use psychic, you must first have postgresql installed and running on your
+              local machine.
             </p>
 
             <p>
-              Once you have postgres installed, open your .env and .env.test
-              files. Your .env file sets environment variables for your
-              development server, as well as for when you run the console, while
-              your .env.test file sets env variables for jest, both when running
-              unit and feature specs.
+              Once you have postgres installed, open your .env and .env.test files. Your .env file sets
+              environment variables for your development server, as well as for when you run the console,
+              while your .env.test file sets env variables for jest, both when running unit and feature specs.
             </p>
           </React.Fragment>
         }
@@ -51,11 +47,15 @@ psychic new myapp --api --ws --redis
 # .env
 DB_USER=mypostgresuser
 DB_NAME=myapp_development
+DB_PORT=5432
+DB_HOST=localhost
 APP_ENCRYPTION_KEY='sp4-pki-dftx'
 
 # .env.test
 DB_USER=mypostgresuser
 DB_NAME=myapp_test
+DB_PORT=5432
+DB_HOST=localhost
 APP_ENCRYPTION_KEY='3gy-vg7-fd68'
 `}
       ></CodeExample>
@@ -66,33 +66,22 @@ APP_ENCRYPTION_KEY='3gy-vg7-fd68'
         description={
           <React.Fragment>
             <p>
-              To see and/or make changes to the names of all environment
-              variables used,&nbsp; see{" "}
-              <span className="hl">db/connection.ts</span>, which exposes the
-              Sequelize configuration directlty to you for easy
-              modification/adaptation as the Sequelize&nbsp; api shifts.
+              To see and/or make changes to the names of all environment variables used,&nbsp; see{' '}
+              <span className="hl">conf/dream.ts</span>, which exposes a config that taps into your underlying
+              env vars.
             </p>
           </React.Fragment>
         }
         codeExample={`\
-import { Sequelize } from "sequelize-typescript"
-import { Dialect } from "sequelize"
-import { env } from 'psychic'
-
-env.load()
-
-const connection = new Sequelize({
-  dialect: (process.env.DB_DRIVER || 'postgres') as Dialect,
-  host: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT || '5432'),
-  username: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'psychic_dev',
-  models: [__dirname + '/../app/models'],
-  logging: process.env.DEBUG === '1',
-})
-
-export default connection
+export default {
+  db: {
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    name: process.env.DB_NAME,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+  },
+}
 `}
       ></CodeExample>
 
@@ -101,29 +90,26 @@ export default connection
         expandLevel={2}
         description={
           <React.Fragment>
-            <p>
-              Once this is done, you are able to run a host of commands to play
-              with your environment.
-            </p>
+            <p>Once this is done, you are able to run a host of commands to play with your environment.</p>
           </React.Fragment>
         }
         codeExample={`\
 # create your database
-psychic db:create
-NODE_ENV=test psychic db:create
+psy db:create
+NODE_ENV=test psy db:create
 
 # migrate your database
-psychic db:migrate
-NODE_ENV=test psychic db:migrate
+psy db:migrate
+NODE_ENV=test psy db:migrate
 
 # start your dev server
-psychic dev
+psy dev
 
 # run unit specs
-psychic uspec
+psy uspec
 
 # run feature specs
-psychic fspec
+psy fspec
 `}
         language="bash"
         theme="dark"
@@ -137,20 +123,16 @@ psychic fspec
         description={
           <React.Fragment>
             <p>
-              Within your psychic project, you will see a pretty typical folder
-              structure generated for you.&nbsp; Within the{" "}
-              <span className="hl">app</span> folder, you will find your
-              controllers, models, serializers, and services. These four folders
-              create the walls of your app, allowing you to build your app's
-              entire domain within these folder structures.
+              Within your psychic project, you will see a pretty typical folder structure generated for
+              you.&nbsp; Within the <span className="hl">app</span> folder, you will find your controllers,
+              models, serializers, and services. These four folders create the walls of your app, allowing you
+              to build your app's entire domain within these folder structures.
             </p>
             <p>
-              Outside the app folder, you will find a{" "}
-              <span className="hl">conf</span> and&nbsp;
-              <span className="hl">db</span> folders, each of which provide
-              additional setup outside the domain of your app. Within the conf
-              folder, you will see a <span className="hl">routes.ts</span> file.
-              This file contains all the routes for your app.
+              Outside the app folder, you will find a <span className="hl">conf</span> and&nbsp;
+              <span className="hl">db</span> folders, each of which provide additional setup outside the
+              domain of your app. Within the conf folder, you will see a <span className="hl">routes.ts</span>{' '}
+              file. This file contains all the routes for your app.
             </p>
           </React.Fragment>
         }
@@ -176,10 +158,8 @@ GET  /users     users#index\
         expandLevel={2}
         description={
           <p>
-            By default, a users controller is already provided with the app's
-            scaffolding for you.&nbsp; Examining this controller, you will
-            already see that it has a few methods added for you to respond to
-            the routes in your routes file.
+            Here is a simple example of how a UsersController could be set up to do a simple authentication
+            pattern:
           </p>
         }
         codeExample={`\
@@ -220,9 +200,8 @@ export default class UsersController extends PsychicController {
         expandLevel={2}
         description={
           <p>
-            To create a new controller, simply use the psychic cli. In addition
-            to a controller name, you can pass methods to your controller to
-            have the generator pre-fill them for you.
+            To create a new controller, simply use the psychic cli. In addition to a controller name, you can
+            pass methods to your controller to have the generator pre-fill them for you.
           </p>
         }
         codeExample={`\
@@ -236,10 +215,7 @@ psychic g:controller todos helloworld create update
         id="getting-started-editing-controller"
         expandLevel={2}
         description={
-          <p>
-            Once this is done, a new controller will appear with some methods
-            prefilled for us.
-          </p>
+          <p>Once this is done, a new controller will appear with some methods prefilled for us.</p>
         }
         codeExample={`\
 // app/controllers/todos.ts
@@ -262,12 +238,7 @@ export default class TodosController extends PsychicController {
       <CodeExample
         id="getting-started-adding-hello-world-method"
         expandLevel={2}
-        description={
-          <p>
-            Let's add a handler to our helloworld method to send some content
-            out.
-          </p>
-        }
+        description={<p>Let's add a handler to our helloworld method to send some content out.</p>}
         codeExample={`\
 // app/controllers/todos.ts
 
@@ -287,10 +258,7 @@ public async helloworld() {
         id="getting-started-create-route-example"
         expandLevel={2}
         description={
-          <p>
-            Next, let's make sure we have a route defined for this new method in
-            our routes file.
-          </p>
+          <p>Next, let's make sure we have a route defined for this new method in our routes file.</p>
         }
         codeExample={`\
 // conf/routes.ts
@@ -312,47 +280,11 @@ export default (r: PsychicRouter) => {
         description={
           <p>
             Now that we have this, we can start our dev server and visit&nbsp;
-            <a href="http://localhost:7777/helloworld">
-              http://localhost:7777/helloworld
-            </a>
+            <a href="http://localhost:7777/helloworld">http://localhost:7777/helloworld</a>
           </p>
         }
         codeExample={`\
 $ psychic dev
-
-
-
-
-                    ..:^~~!!~~^:.
-               .~?5G##&&&##&&@@&#G5J!:
-            ^?G#&@&&&&&&####&@@@@@@@&&GY!.
-         .?G&&&###&&&@&&&@@&#BGGB&@@@@@&#BY^
-       .J#@&&&#BGGGGBBB&@#BBGPPBB&@@@&&##BBBY^
-      !P##@BGGPPGGGGPGBBBPPPPPPPPB######B555PP?.
-     JGG&@BPPPPPGGGGGB###PPPPPPPPPGGPPGB##PP5BBY:
-    YGGG#BPGPPPPGGGB&##@&GPPPGBG55555555PGBB##B5Y^
-   ?BGGGPPGGGGGPGGGGG#@#GGPGPP&P55555555PGP5PPP55Y.
-  :BPPGGGGGGGGGGGGBGGBGGBBGP~ 5#555555GBBGP5555PPP7
-  ?G5PGGGGGGB####BBBGPP#@&P.  .Y#BBBPPB#&#G5555B#B5.
-  5G5PPGGGGGB#&&#BGGGPGBBP:     #@@#BBB##&&#GGPG#BP:
-  5GPPPPPB&#GB###BBGGG&@@B.     G@@@@@&BGG#@#GPB#BP:
-  J&GPPPPPGBGGGGGGBBGB&&G^      G@@@@@@#BB&@&####B5.
-  ^@&PPPP5PGGGGGGGGBGY!:       .#@@@@@@@@@@@@@@@&B?
-   J@#P5PPPGPPGGGGG5^          5@@@@@@@@@@@@@@@&#P:
-    P&##GGGG##GPPB@!         .^@@@@@@@@@@@@@@&##G~
-     5@@@&#&@&BPG&@?      YP.!:&@@@@@@@@@@@@&##P~
-      7&@@@@@&GPPP#P     ^@@~~:B@@@@@@@@@@@&#BJ:
-       :Y&@@@@@&&&@@^  :.YBGJ:.~PPGB@@@@@@@&P~
-         :J#@@@@#5?7^ ..            Y@@@@&P~
-           .~YY~.                   P@#P?:
-                                    7~.
-  :::    :::  ::::::::  :::       ::: :::
-  :+:    :+: :+:    :+: :+:       :+: :+:
-  +:+    +:+ +:+    +:+ +:+       +:+ +:+
-  +#++:++#++ +#+    +:+ +#+  +:+  +#+ +#+
-  +#+    +#+ +#+    +#+ +#+ +#+#+ +#+ +#+
-  #+#    #+# #+#    #+#  #+#+# #+#+#  #+#
-  ###    ###  ########    ###   ###   ##########
   psychic dev server started at port 7777
 `}
         language="bash"
@@ -366,41 +298,37 @@ $ psychic dev
         expandLevel={2}
         description={
           <p>
-            Examining our existing app structure, we will see that both a model
-            and migration have&nbsp; already been added to the project
-            structure. The user comes pre-filled with some helpful methods for
-            encrypting and verifying passwords.
+            Examining our existing app structure, we will see that both a model and migration have&nbsp;
+            already been added to the project structure. The user comes pre-filled with some helpful methods
+            for encrypting and verifying passwords.
           </p>
         }
         codeExample={`\
 // app/models/user.ts
 
-import { Sequelize, Table, Column, Model, HasMany, IsUUID, PrimaryKey, DataType, BeforeUpdate, BeforeCreate, Contains } from 'sequelize-typescript'
-import { UUID, Hash, PsychicModel, Authenticates } from 'psychic'
+import { BeforeCreate, BeforeUpdate, Column, Validates, Hash, dream } from 'psychic'
+import { DateTime } from 'luxon'
 
-@Table({ tableName: 'users', underscored: true })
-export default class User extends PsychicModel {
-  @IsUUID(4)
-  @PrimaryKey
-  @Column({ defaultValue: Sequelize.literal("uuid_generate_v4()") })
-  id: UUID
+const Dream = dream('users')
+export default class User extends Dream {
+  public id: number
+  public name: string
+  public created_at: DateTime
+  public updated_at: DateTime
 
-  @Contains('@')
-  @Column(DataType.TEXT)
-  email: string
+  @Validates('contains', '@')
+  @Validates('presence')
+  public email: string
 
-  @Column(DataType.TEXT)
-  password_digest: string
+  @Validates('length', { min: 4, max: 18 })
+  public password_digest: string
+  public password?: string | null
 
-  @Column(DataType.VIRTUAL)
-  public password: string
-
-  @BeforeCreate
-  @BeforeUpdate
-  static async hashPass(user: User) {
-    if (user.password)
-      user.password_digest = await Hash.gen(user.password)
-    user.password = undefined
+  @BeforeCreate()
+  @BeforeUpdate()
+  public async hashPass() {
+    if (this.password) this.password_digest = await Hash.gen(this.password)
+    this.password = undefined
   }
 
   public async checkPassword(password: string) {
@@ -416,13 +344,12 @@ export default class User extends PsychicModel {
         expandLevel={2}
         description={
           <p>
-            However, since we originally set out to create a new model, not
-            examine the existing one, let's go ahead and generate one using the
-            cli.
+            However, since we originally set out to create a new model, not examine the existing one, let's go
+            ahead and generate one using the cli.
           </p>
         }
         codeExample={`\
-psychic g:model todo user:belongs_to content:string\
+psy g:model todo user:belongs_to content:string\
 `}
         language="bash"
         theme="dark"
@@ -433,41 +360,27 @@ psychic g:model todo user:belongs_to content:string\
         expandLevel={2}
         description={
           <p>
-            Running this generates a new <span className="hl">todo</span> model
-            for us, automatically adding on&nbsp; all of the columns we
-            specified in our generator command, including our belongs_to
-            association to the user model. These model annotations are all
-            driven by the underlying&nbsp;
-            <a href="https://github.com/sequelize/sequelize-typescript">
-              sequelize-typescript
-            </a>{" "}
-            library.
+            Running this generates a new <span className="hl">todo</span> model for us, automatically adding
+            on&nbsp; all of the columns we specified in our generator command, including our belongs_to
+            association to the user model. These model annotations are all driven by the underlying&nbsp;
+            <a href="https://github.com/sequelize/sequelize-typescript">sequelize-typescript</a> library.
           </p>
         }
         codeExample={`\
-// app/models/todo.ts
-
-import { Sequelize, Table, Column, IsUUID, PrimaryKey, BelongsTo, ForeignKey } from 'sequelize-typescript'
-import { UUID, PsychicModel } from 'psychic'
+import { DateTime } from 'luxon'
+import { dream, Column, BelongsTo } from 'dream'
 import User from './user'
 
-@Table({ tableName: 'todos' })
-export default class Todo extends PsychicModel {
-  @IsUUID(4)
-  @PrimaryKey
-  @Column({ defaultValue: Sequelize.literal("uuid_generate_v4()") })
-  public id: UUID
-
-  @IsUUID(4)
-  @ForeignKey(() => User)
-  @Column
-  user_id: UUID
+const Dream = dream('todos')
+export default class Todo extends Dream {
+  public id: number
+  public user_id: number
+  public content: string
+  public created_at: DateTime
+  public updated_at: DateTime
 
   @BelongsTo(() => User)
   public user: User
-
-  @Column
-  public content: string
 }
 `}
       ></CodeExample>
@@ -476,41 +389,30 @@ export default class Todo extends PsychicModel {
         id="getting-started-examining-the-new-migration"
         description={
           <p>
-            In addition to a model, the generator you just ran will also
-            generate a migration to create a new table for the corresponding
-            model. It automatically provides all the fields specified when
+            In addition to a model, the generator you just ran will also generate a migration to create a new
+            table for the corresponding model. It automatically provides all the fields specified when
             generating the model.
           </p>
         }
         codeExample={`\
-// db/migrations/1675570522455-create-todos.ts
+import { Kysely, sql } from 'kysely'
 
-/** @type {import('sequelize-cli').Migration} */
-module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.sequelize.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
-    await queryInterface.createTable('todos', {
-      id: {
-        allowNull: false,
-        primaryKey: true,
-        defaultValue: Sequelize.literal('uuid_generate_v4()'),
-        type: Sequelize.DataTypes.UUID,
-      },
-      'user_id': {
-        type: Sequelize.DataTypes.UUID,
-      },
-      'content': {
-        type: Sequelize.STRING,
-      },
-    })
-  },
+export async function up(db: Kysely<any>): Promise<void> {
+  await db.schema
+    .createTable('todos')
+    .addColumn('id', 'serial', col => col.primaryKey())
+    .addColumn('user_id', 'serial', col => col.references('users.id').onDelete('cascade').notNull())
+    .addColumn('content', 'text')
+    .addColumn('created_at', 'timestamp', col => col.defaultTo(sql\`now()\`).notNull())
+    .addColumn('updated_at', 'timestamp', col => col.defaultTo(sql\`now()\`).notNull())
+    .execute()
+}
 
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('todos')
-  }
+export async function down(db: Kysely<any>): Promise<void> {
+  await db.schema.dropTable('todos').execute()
 }
 `}
       ></CodeExample>
     </React.Fragment>
-  );
+  )
 }
