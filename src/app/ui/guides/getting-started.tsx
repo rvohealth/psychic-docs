@@ -178,7 +178,7 @@ export default class UsersController extends PsychicController {
     if (!this.params.email || !this.params.password)
       this.notFound()
 
-    const user = await User.findOne({ where: { email: this.params.email } })
+    const user = await User.findBy({ email: this.params.email })
     if (!user || !await user.checkPassword(this.params.password))
       this.notFound()
 

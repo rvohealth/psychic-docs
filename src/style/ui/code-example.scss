@@ -28,16 +28,15 @@
     padding-top: 20px;
     margin-bottom: 60px;
 
-
     &.code {
       padding-bottom: 20px;
       text-align: left;
-      background: #020b2f;
+      background: #244003;
       font-size: 18px;
 
       pre {
         padding: 40px !important;
-        background: #020b2f !important;
+        background: #244003 !important;
       }
     }
   }
@@ -50,7 +49,7 @@
 
     &.code {
       .code-wrap {
-        background: #0a09ac;
+        background: #e510f2;
         padding: 20px;
         border-radius: 10px;
 
@@ -84,10 +83,10 @@
 
   &.dark {
     .notation-outer-container.code {
-      background: rgb(3, 7, 60);
+      background: #320f88;
 
       > pre {
-        background: rgb(3, 7, 60) !important;
+        background: #320f88 !important;
       }
     }
   }
