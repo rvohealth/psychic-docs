@@ -284,14 +284,14 @@ export default (r: PsychicRouter) => {
           </p>
         }
         codeExample={`\
-$ psychic dev
-  psychic dev server started at port 7777
+$ psy dev
+  psy dev server started at port 7777
 `}
         language="bash"
         theme="dark"
       ></CodeExample>
 
-      <h3>Creating a model</h3>
+      <h3 id="getting-started-create-model">Creating a model</h3>
 
       <CodeExample
         id="getting-started-examining-existing-user-model"
