@@ -1,0 +1,212 @@
+import React from "react";
+import CodeExample from "../code-example";
+
+export default function GuidesModels() {
+  return (
+    <React.Fragment>
+      <h2 id="models">Models</h2>
+
+      <p>
+        To power the ORM under the hood, psychic is relying on the&nbsp;
+        <a href="https://github.com/sequelize/sequelize-typescript">
+          sequelize-typescript
+        </a>{" "}
+        library.&nbsp; We would have preferred not to make any adjustments to
+        this library at all, but out of the box&nbsp; it does not come with a
+        query building mechanism, and is also missing a few other bells
+        and&nbsp; whistles that could really make the ORM sing.
+      </p>
+
+      <p>
+        Here, we will cover the basics the ORM, which oversteps slightly into
+        the docs of the sequelize-typescript library itself (we recommend you
+        read those docs for&nbsp a more thorough understanding of how the Active
+        Record pattern unfolds in this library),&nbsp; but we will provide a
+        basic understanding of how the ORM works in these guides to help you
+        along.
+      </p>
+
+      <h3 id="models-generate">Generating a model</h3>
+
+      <CodeExample
+        id="models-generate-example"
+        description={
+          <p>
+            The easiest way to generate a model is by using the psychic cli.
+          </p>
+        }
+        codeExample={`\
+psychic g:model todo user:belongs_to content:string
+`}
+      ></CodeExample>
+
+      <CodeExample
+        id="models-generate-using-resource-example"
+        description={
+          <p>
+            If you know you will be needing endpoints exposed for the resource,
+            you can additionally&nbsp; use the resource generator provided by
+            psychic to also generate a controller and serializer.&nbsp; You will
+            still need to add routes manually, and will definitely need to
+            modify the generated&nbsp; code to tighten the wrenches
+            authorization-wise, params-wise, etc...
+          </p>
+        }
+        codeExample={`\
+psychic g:resource todo user:belongs_to content:string
+`}
+      ></CodeExample>
+
+      <h3 id="models-create">Creating an instance of a model</h3>
+
+      <CodeExample
+        id="models-create-example"
+        description={
+          <p>
+            To create an instance of a psychic model, use the static{" "}
+            <span className="hl">.create</span> method.&nbsp; This method will
+            automatically fill the id, created_at and updated_at fields on your
+            model.
+          </p>
+        }
+        codeExample={`\
+import User from 'app/models/user'
+
+const user = await User.create({
+  email: 'hello@world.biz',
+  password: 'fishandfriends',
+})
+console.log(user.email, user.id)
+`}
+      ></CodeExample>
+
+      <h3 id="models-query">Querying your models</h3>
+
+      <CodeExample
+        id="models-query-all-example"
+        description={
+          <p>
+            Since sequelize-typescript does not provide a query builder out the
+            box for you, we have provided one for you through the{" "}
+            <span className="hl">PsychicModel</span> class.
+          </p>
+        }
+        codeExample={`\
+import User from 'app/models/user'
+import { Op } from 'sequelize'
+
+await User
+  .where({ email: { [Op.like]: '%y@%' }})
+  .all()
+`}
+      ></CodeExample>
+
+      <CodeExample
+        id="models-query-first-example"
+        description={
+          <p>
+            Additionally, we provide first and last methods on the query builder
+            to allow you to easily gain entry to first or last records.
+          </p>
+        }
+        codeExample={`\
+import User from 'app/models/user'
+import { Op } from 'sequelize'
+
+await User
+  .where({ email: { [Op.like]: '%y@%' }})
+  .first() // or .last() to order by created_at DESC
+`}
+      ></CodeExample>
+
+      <h3 id="models-update">Updating an existing model</h3>
+
+      <CodeExample
+        id="models-update-example"
+        description={
+          <p>
+            To update a record that already exists, you can use a combination of
+            attribute setters&nbsp; and the <span className="hl">#save</span>{" "}
+            method on your models to trigger updates.
+          </p>
+        }
+        codeExample={`\
+import User from 'app/models/user'
+const user = await User.first()
+user.email = 'how@yadoin.biz'
+await user.save()
+`}
+      ></CodeExample>
+
+      <CodeExample
+        id="models-update-example-2"
+        description={
+          <p>
+            To achieve this in one line, you can call the{" "}
+            <span className="hl">#update</span> method.
+          </p>
+        }
+        codeExample={`\
+import User from 'app/models/user'
+const user = await User.first()
+await user.update({ email: 'how@yadoin.biz' })
+`}
+      ></CodeExample>
+
+      <CodeExample
+        id="models-update-example-3"
+        description={
+          <p>
+            Updates can also be achieved through the query builder for bulk
+            updating.
+          </p>
+        }
+        codeExample={`\
+import User from 'app/models/user'
+import { Op } from 'sequelize'
+
+await User
+  .where({ email: { [Op.like]: '%y@%' }})
+  .update({ email: 'fish@mcgee.com' })
+`}
+      ></CodeExample>
+
+      <h3 id="models-destroy">Destroying a model</h3>
+
+      <CodeExample
+        id="models-destroy"
+        description={
+          <p>
+            To destroy a model, simply call the{" "}
+            <span className="hl">#destroy</span> method on the instance.
+          </p>
+        }
+        codeExample={`\
+import User from 'app/models/user'
+
+const user = await User.first()
+await user.destroy()
+`}
+      ></CodeExample>
+
+      <CodeExample
+        id="models-destroy-2"
+        description={
+          <p>
+            Destroying can also be done from the query builder for bulk
+            deletion.
+          </p>
+        }
+        codeExample={`\
+import User from 'app/models/user'
+import { Op } from 'sequelize'
+
+// TODO: implement this!
+await User
+  .where({ email: { [Op.like]: '%y@%' }})
+  .destroy()
+`}
+      ></CodeExample>
+    </React.Fragment>
+  );
+}

@@ -1,0 +1,64 @@
+.docs {
+  vertical-align: top;
+  display: inline-block;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  min-height: 100vh;
+
+  &.guides {
+    .hero {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      width: 100vw;
+      min-height: calc(100vh - 100px);
+      padding-bottom: 100px;
+      text-align: center;
+      background: #020016;
+      font-size: 20px;
+      color: rgb(48, 48, 48);
+
+      h2 {
+        margin-top: 100px;
+        font-weight: 400;
+        font-size: 80px;
+        margin-bottom: 20px;
+      }
+
+      .subtext {
+        color: white;
+        max-width: 600px;
+        display: inline-block;
+        margin-bottom: 80px;
+        font-size: 26px;
+      }
+    }
+
+    .docs-content {
+      position: absolute;
+      top: 100vh;
+      width: calc(100vw - 250px - 60px - 20px);
+      padding: 60px 20px 60px 60px;
+      overflow-y: auto;
+      background: rgb(2, 0, 203);
+
+      h1 {
+        font-size: 100px;
+        font-weight: 200;
+        margin-bottom: 120px;
+      }
+
+      h2 {
+        font-size: 50px;
+        font-weight: 200;
+        margin-bottom: 40px;
+      }
+
+      h3 {
+        font-size: 30px;
+        font-weight: 400;
+        // margin-bottom: 80px;
+      }
+    }
+  }
+}

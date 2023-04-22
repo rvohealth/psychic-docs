@@ -1,0 +1,71 @@
+.nnt-el {
+  display: inline-block;
+
+  &.part {
+    .nnt-el.measure {
+      > .nnt-el {
+        margin: 0 4px;
+      }
+    }
+  }
+
+  &.dark .nnt-el {
+    &.note,
+    &.chord,
+    &.pitch,
+    &.chord-annotation {
+      color: #00ffba;
+    }
+
+    &.key-signature,
+    &.time-signature,
+    &.dynamic,
+    &.clef,
+    &.part-opening {
+      color: #ffde00;
+    }
+  }
+
+  &.note,
+  &.chord,
+  &.pitch,
+  &.chord-annotation {
+    color: #17daa6;
+  }
+
+  &.rest {
+    color: rgb(137, 84, 233);
+  }
+
+  &.chord .pitch,
+  &.chord-annotation .token {
+    font-style: italic;
+    text-decoration: underline !important;
+  }
+
+  &.chord .pitch {
+    font-weight: 500;
+  }
+
+  &.key-signature,
+  &.time-signature,
+  &.dynamic,
+  &.clef,
+  &.part-opening {
+    color: #bfae38;
+  }
+
+  &.invalid {
+    color: rgb(168, 168, 168);
+  }
+
+  &.octave-modifier,
+  &.global-modifier {
+    color: $red;
+  }
+
+  &.tuplet-opening,
+  &.close-grouping {
+    color: #a4b2bf;
+  }
+}

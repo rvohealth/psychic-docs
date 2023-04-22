@@ -1,0 +1,180 @@
+.nnt-score-input {
+  .text-area-container {
+    border: solid 2px $purple !important;
+    padding: 2px;
+  }
+
+  .saved-expressions-container {
+    padding-left: 40px;
+    // border: red solid thin;
+    text-align: left;
+
+    .expression-container {
+      margin: 5px 10px;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .expression-container.selected {
+      .expression .expression-content {
+        background: $hot_purple;
+      }
+
+      &[data-expression-index='0'] .expression { border-color: $sequence_color_1; }
+      &[data-expression-index='1'] .expression { border-color: $sequence_color_2; }
+      &[data-expression-index='2'] .expression { border-color: $sequence_color_3; }
+      &[data-expression-index='3'] .expression { border-color: $sequence_color_4; }
+      &[data-expression-index='4'] .expression { border-color: $sequence_color_5; }
+      &[data-expression-index='5'] .expression { border-color: $sequence_color_6; }
+      &[data-expression-index='6'] .expression { border-color: $sequence_color_7; }
+      &[data-expression-index='7'] .expression { border-color: $sequence_color_8; }
+    }
+  }
+
+  .expression-container {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: left;
+
+    &.main {
+      border: solid 2px $purple;
+
+      .expression {
+        border: solid 2px $purple;
+        color: $purple;
+      }
+
+      .expression-content {
+        background: $hot_purple;
+      }
+
+      &[data-expression-index='0'] {
+        border-color: $sequence_color_1 !important;
+
+        .expression {
+          border-color: $sequence_color_1;
+          color: $sequence_color_1;
+        }
+      }
+
+      &[data-expression-index='1'] {
+        border-color: $sequence_color_2;
+
+        .expression {
+          border-color: $sequence_color_2;
+          color: $sequence_color_2;
+        }
+      }
+
+      &[data-expression-index='2'] {
+        border-color: $sequence_color_3;
+
+        .expression {
+          border-color: $sequence_color_3;
+          color: $sequence_color_3;
+        }
+      }
+
+      &[data-expression-index='3'] {
+        border-color: $sequence_color_4;
+
+        .expression {
+          border-color: $sequence_color_4;
+          color: $sequence_color_4;
+        }
+      }
+
+      &[data-expression-index='4'] {
+        border-color: $sequence_color_5;
+
+        .expression {
+          border-color: $sequence_color_5;
+          color: $sequence_color_5;
+        }
+      }
+
+      &[data-expression-index='5'] {
+        border-color: $sequence_color_6;
+
+        .expression {
+          border-color: $sequence_color_6;
+          color: $sequence_color_6;
+        }
+      }
+
+      &[data-expression-index='6'] {
+        border-color: $sequence_color_7;
+
+        .expression {
+          border-color: $sequence_color_7;
+          color: $sequence_color_7;
+        }
+      }
+
+      &[data-expression-index='7'] {
+        border-color: $sequence_color_8;
+
+        .expression {
+          border-color: $sequence_color_8;
+          color: $sequence_color_8;
+        }
+      }
+    }
+
+    .expression {
+      border: solid 2px #e5f7f7;
+      padding: 2px;
+      color: white;
+      border-radius: 4px;
+      display: inline-block;
+      // padding-bottom: 15px;
+      // margin-bottom: 20px;
+
+      .expression-content {
+        // background: $hot_purple;
+        padding: 10px;
+        padding-bottom: 14px;
+        border-radius: 4px;
+      }
+    }
+
+  }
+
+  .text-area-container {
+    margin-top: 80px;
+    border: solid #f4f4f4 2px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 40%;
+    background: transparent;
+
+    textarea {
+      padding: 20px;
+      height: 30px;
+      width: calc(100% - 40px);
+      background: $hot_purple;
+      color: white;
+      // background: transparent;
+      border-radius: 6px;
+      border: none;
+      font-size: 24px;
+      resize: none;
+      display: block;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &[data-selected-index="0"] .text-area-container { border-color: $sequence_color_1 !important; }
+  &[data-selected-index="1"] .text-area-container { border-color: $sequence_color_2 !important; }
+  &[data-selected-index="2"] .text-area-container { border-color: $sequence_color_3 !important; }
+  &[data-selected-index="3"] .text-area-container { border-color: $sequence_color_4 !important; }
+  &[data-selected-index="4"] .text-area-container { border-color: $sequence_color_5 !important; }
+  &[data-selected-index="5"] .text-area-container { border-color: $sequence_color_6 !important; }
+  &[data-selected-index="6"] .text-area-container { border-color: $sequence_color_7 !important; }
+  &[data-selected-index="7"] .text-area-container { border-color: $sequence_color_8 !important; }
+}

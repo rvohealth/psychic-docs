@@ -1,0 +1,35 @@
+$orange: #E98141;
+
+$yellow: #F6DA63;
+$vanilla: #FEF5A6;
+
+$forest_green: #335C2B;
+// $green: #7DA04E;
+
+$red: #FF4E50;
+$bubblegum_pink: #FF567E;
+$hot_salmon: #FF4647;
+$salmon: #FF6462;
+$light_salmon: #FF8583;
+
+$brown: #CE9544;
+$brown_dark1: #603600;
+$brown_dark2: #361500;
+$brown_dark3: #1C0B00;
+
+$hot_purple: #3e2994;
+$purple: rgb(125, 88, 254);
+$purple_dark1: #3F0071;
+$purple_dark2: #140051;
+$purple_dark3: #000001;
+
+$black: $purple_dark3;
+
+$sequence_color_1: $bubblegum_pink;
+$sequence_color_2: $brown;
+$sequence_color_3: $orange;
+$sequence_color_4: $yellow;
+$sequence_color_5: lighten($purple, 20%);
+$sequence_color_6: $brown;
+$sequence_color_7: $salmon;
+$sequence_color_8: darken($yellow, 20%);

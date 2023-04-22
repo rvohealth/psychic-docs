@@ -1,0 +1,25 @@
+@import './vars.scss';
+@import './colors.scss';
+@import './ui/base.scss';
+@import './syntax.scss';
+@import './page/base.scss';
+
+body {
+  background: $light_gray;
+  color: $teal;
+  font-size: 18px;
+}
+
+a {
+  color: white;
+}
+
+p {
+  line-height: 25px;
+}
+
+span.hl {
+  border-radius: 2px;
+  color: lighten($pink, 2%);
+  font-style: italic;
+}

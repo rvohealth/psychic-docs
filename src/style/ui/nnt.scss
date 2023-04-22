@@ -1,0 +1,28 @@
+.nnt {
+  display: inline-block;
+  // background: darken($eggshell_white, 10%);
+  border-radius: 4px;
+
+  .notation-container {
+    position: relative;
+    overflow: hidden;
+    color: rgb(68, 68, 68);
+
+    svg {
+      text {
+        fill: rgb(68, 68, 68);
+      }
+
+      path {
+        // stroke: rgba(68, 68, 68, 0.3);
+        fill: rgb(68, 68, 68);
+      }
+
+      // hides weird vertical line at top of svg
+      g + path {
+        stroke: none;
+        fill: none;
+      }
+    }
+  }
+}

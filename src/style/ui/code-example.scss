@@ -1,0 +1,94 @@
+.code-example {
+  margin-top: 200px;
+
+  &.reduced {
+    margin-top: 30px;
+  }
+
+  h3 {
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    font-size: 40px;
+  }
+
+  > .content {
+    display: flex;
+  }
+
+  .notation-main,
+  .description {
+    width: calc(65%);
+    // padding: 80px;
+  }
+
+  .notation-outer-container {
+    text-align: center;
+    border-radius: 8px;
+    padding-top: 20px;
+    margin-bottom: 60px;
+
+
+    &.code {
+      padding-bottom: 20px;
+      text-align: left;
+      background: #020b2f;
+      font-size: 18px;
+
+      pre {
+        padding: 40px !important;
+        background: #020b2f !important;
+      }
+    }
+  }
+
+  .notation-transcription {
+    vertical-align: top;
+    width: calc(35% - 40px);
+    padding: 0 20px;
+    color: white;
+
+    &.code {
+      .code-wrap {
+        background: #0a09ac;
+        padding: 20px;
+        border-radius: 10px;
+
+        li {
+          background: transparent !important;
+          color: white !important;
+          font-size: 14px !important;
+        }
+
+        > pre {
+          background-color: auto !important;
+          :not(.results) {
+            padding-left: 30px !important;
+          }
+        }
+      }
+    }
+
+    .tabs {
+      border-radius: 10px;
+      // background: lighten($slate, 60%);
+      // border: solid lighten($slate, 60%) 2px;
+      padding-top: 20px;
+
+      .content {
+        // padding: 21px 20px;
+        // background: $gray;
+      }
+    }
+  }
+
+  &.dark {
+    .notation-outer-container.code {
+      background: rgb(3, 7, 60);
+
+      > pre {
+        background: rgb(3, 7, 60) !important;
+      }
+    }
+  }
+}
