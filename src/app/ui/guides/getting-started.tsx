@@ -110,6 +110,9 @@ psy uspec
 
 # run feature specs
 psy fspec
+
+# open a repl with access to your model layer
+psy console
 `}
         language="bash"
         theme="dark"
