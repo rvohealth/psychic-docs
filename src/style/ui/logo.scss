@@ -1,23 +1,10 @@
 .nnt-logo h2 {
-  color: $text_color_slam !important;
-
-  // span:nth-child(1) {
-  //   color: $yellow_green;
-  // }
-
-  // span:nth-child(2) {
-  //   color: $green;
-  // }
-
-  // span:nth-child(3) {
-  //   color: $teal;
-  // }
-
-  // span:nth-child(4) {
-  //   color: $yellow_green;
-  // }
-
-  // span:nth-child(5) {
-  //   color: $green;
-  // }
+  display: inline-block;
+  color: #f000ff;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: green;
+  padding: 10px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 100px;
 }

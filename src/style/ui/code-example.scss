@@ -32,11 +32,13 @@
       padding-bottom: 20px;
       text-align: left;
       background: #244003;
+      background: #40018f;
       font-size: 18px;
 
       pre {
         padding: 40px !important;
         background: #244003 !important;
+        background: #40018f !important;
       }
     }
   }
@@ -83,10 +85,11 @@
 
   &.dark {
     .notation-outer-container.code {
-      background: #320f88;
+      background: #180018;
+      border: solid #a600a5 3px;
 
       > pre {
-        background: #320f88 !important;
+        background: #180018 !important;
       }
     }
   }

@@ -208,7 +208,7 @@ export default class UsersController extends PsychicController {
           </p>
         }
         codeExample={`\
-psychic g:controller todos helloworld create update
+psy g:controller todos helloworld create update
 `}
         language="bash"
         theme="dark"
