@@ -94,7 +94,7 @@ export default {
 `}
       ></CodeExample>
 
-      <h3 id="configuration-routing">Dream</h3>
+      <h3 id="configuration-routing">Routing</h3>
 
       <CodeExample
         id="configuration-routing-example"
