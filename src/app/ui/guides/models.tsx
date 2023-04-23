@@ -2,6 +2,7 @@ import React from 'react'
 import CodeExample from '../code-example'
 import GuidesModelAssociations from './models/associations'
 import GuidesModelHooks from './models/hooks'
+import GuidesModelValidations from './models/validations'
 
 export default function GuidesModels() {
   return (
@@ -226,6 +227,7 @@ await User
 
       <GuidesModelAssociations />
       <GuidesModelHooks />
+      <GuidesModelValidations />
     </React.Fragment>
   )
 }

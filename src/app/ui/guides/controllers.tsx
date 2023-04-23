@@ -12,6 +12,7 @@ export default function GuidesControllers() {
         id="controllers-generating-example"
         description={<p>To generate a controller, use the provided cli tool as demonstrated below:</p>}
         language="bash"
+        theme="dark"
         codeExample={`\
 psy g:controller howyadoins create update destroy
 `}

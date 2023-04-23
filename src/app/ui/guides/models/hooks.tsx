@@ -4,7 +4,7 @@ import CodeExample from '../../code-example'
 export default function GuidesModelHooks() {
   return (
     <React.Fragment>
-      <h3 id="hooks">Hooks</h3>
+      <h3 id="models-hooks">Hooks</h3>
 
       <p>
         Hooks allow us to add powerful callback-driven behavior to our models both before and after various

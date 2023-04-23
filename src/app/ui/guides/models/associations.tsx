@@ -4,7 +4,7 @@ import CodeExample from '../../code-example'
 export default function GuidesModelAssociations() {
   return (
     <React.Fragment>
-      <h3 id="associations">Associations</h3>
+      <h3 id="models-associations">Associations</h3>
 
       <p>
         Associations allow us to connect in the abstract two tables which are already making use of sensible
