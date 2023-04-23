@@ -119,8 +119,8 @@ export default function GuidesLeftSidebar() {
             <a className="subgroup-title " href="#models-scopes">
               scopes
             </a>
-            <a href="#models-validations-usage">usage</a>
-            <a href="#models-validations-scopes-default">default scopes</a>
+            <a href="#models-scopes-usage">usage</a>
+            <a href="#models-scopes-default">default scopes</a>
           </nav>
         </nav>
 
