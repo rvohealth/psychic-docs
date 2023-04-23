@@ -1,5 +1,7 @@
 import React from 'react'
 import CodeExample from '../code-example'
+import GuidesModelAssociations from './models/associations'
+import GuidesModelHooks from './models/hooks'
 
 export default function GuidesModels() {
   return (
@@ -221,6 +223,9 @@ await User
   .destroy()
 `}
       ></CodeExample>
+
+      <GuidesModelAssociations />
+      <GuidesModelHooks />
     </React.Fragment>
   )
 }

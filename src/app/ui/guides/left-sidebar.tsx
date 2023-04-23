@@ -47,8 +47,8 @@ export default function GuidesLeftSidebar() {
           </a>
           <a href="#controllers-generating">generating</a>
           <a href="#controllers-request">request</a>
-          <a href="#controllers-params">params</a>
           <a href="#controllers-response">response</a>
+          <a href="#controllers-params">params</a>
         </nav>
 
         <nav>
