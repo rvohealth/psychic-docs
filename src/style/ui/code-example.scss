@@ -24,7 +24,7 @@
 
   .notation-outer-container {
     text-align: center;
-    border-radius: 8px;
+    border-radius: 3px;
     padding-top: 20px;
     margin-bottom: 60px;
 
@@ -32,13 +32,13 @@
       padding-bottom: 20px;
       text-align: left;
       background: #244003;
-      background: #40018f;
+      background: #180036;
       font-size: 18px;
 
       pre {
         padding: 40px !important;
         background: #244003 !important;
-        background: #40018f !important;
+        background: #180036 !important;
       }
     }
   }
@@ -51,9 +51,9 @@
 
     &.code {
       .code-wrap {
-        background: #e510f2;
+        background: #003e50;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 3px;
 
         li {
           background: transparent !important;

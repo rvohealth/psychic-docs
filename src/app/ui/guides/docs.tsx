@@ -1,27 +1,21 @@
-import { Link } from "react-router-dom";
-import Logo from "../logo";
-import GuidesDatabase from "./database";
-import GuidesGettingStarted from "./getting-started";
-import GuidesInstallation from "./installation";
-import GuidesWelcome from "./welcome";
-import GuidesModels from "./models";
-import GuidesRouting from "./routing";
+import { Link } from 'react-router-dom'
+import Logo from '../logo'
+import GuidesDatabase from './database'
+import GuidesGettingStarted from './getting-started'
+import GuidesInstallation from './installation'
+import GuidesWelcome from './welcome'
+import GuidesModels from './models'
+import GuidesRouting from './routing'
+import GuidesConfiguration from './configuration'
+import GuidesControllers from './controllers'
 
 export default function GuidesDocs() {
   return (
-    <div
-      className="docs guides"
-      onScroll={(e) => {
-        console.log(e);
-      }}
-    >
+    <div className="docs guides">
       <div className="hero">
         <Logo size="large" />
         <div>
-          <p className="subtext">
-            An express-driven web framework with a jaw-dropping ORM built on
-            Kysely
-          </p>
+          <p className="subtext">An express-driven web framework with a jaw-dropping ORM built on Kysely</p>
         </div>
 
         <nav>
@@ -37,10 +31,12 @@ export default function GuidesDocs() {
         <GuidesWelcome />
         <GuidesInstallation />
         <GuidesGettingStarted />
+        <GuidesConfiguration />
         <GuidesRouting />
-        <GuidesDatabase />
+        <GuidesControllers />
         <GuidesModels />
+        <GuidesDatabase />
       </div>
     </div>
-  );
+  )
 }

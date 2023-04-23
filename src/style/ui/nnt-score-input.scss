@@ -20,14 +20,30 @@
         background: $hot_purple;
       }
 
-      &[data-expression-index='0'] .expression { border-color: $sequence_color_1; }
-      &[data-expression-index='1'] .expression { border-color: $sequence_color_2; }
-      &[data-expression-index='2'] .expression { border-color: $sequence_color_3; }
-      &[data-expression-index='3'] .expression { border-color: $sequence_color_4; }
-      &[data-expression-index='4'] .expression { border-color: $sequence_color_5; }
-      &[data-expression-index='5'] .expression { border-color: $sequence_color_6; }
-      &[data-expression-index='6'] .expression { border-color: $sequence_color_7; }
-      &[data-expression-index='7'] .expression { border-color: $sequence_color_8; }
+      &[data-expression-index='0'] .expression {
+        border-color: $sequence_color_1;
+      }
+      &[data-expression-index='1'] .expression {
+        border-color: $sequence_color_2;
+      }
+      &[data-expression-index='2'] .expression {
+        border-color: $sequence_color_3;
+      }
+      &[data-expression-index='3'] .expression {
+        border-color: $sequence_color_4;
+      }
+      &[data-expression-index='4'] .expression {
+        border-color: $sequence_color_5;
+      }
+      &[data-expression-index='5'] .expression {
+        border-color: $sequence_color_6;
+      }
+      &[data-expression-index='6'] .expression {
+        border-color: $sequence_color_7;
+      }
+      &[data-expression-index='7'] .expression {
+        border-color: $sequence_color_8;
+      }
     }
   }
 
@@ -139,13 +155,12 @@
         border-radius: 4px;
       }
     }
-
   }
 
   .text-area-container {
     margin-top: 80px;
     border: solid #f4f4f4 2px;
-    border-radius: 8px;
+    border-radius: 2px;
     display: inline-block;
     width: 40%;
     background: transparent;
@@ -169,12 +184,28 @@
     }
   }
 
-  &[data-selected-index="0"] .text-area-container { border-color: $sequence_color_1 !important; }
-  &[data-selected-index="1"] .text-area-container { border-color: $sequence_color_2 !important; }
-  &[data-selected-index="2"] .text-area-container { border-color: $sequence_color_3 !important; }
-  &[data-selected-index="3"] .text-area-container { border-color: $sequence_color_4 !important; }
-  &[data-selected-index="4"] .text-area-container { border-color: $sequence_color_5 !important; }
-  &[data-selected-index="5"] .text-area-container { border-color: $sequence_color_6 !important; }
-  &[data-selected-index="6"] .text-area-container { border-color: $sequence_color_7 !important; }
-  &[data-selected-index="7"] .text-area-container { border-color: $sequence_color_8 !important; }
+  &[data-selected-index='0'] .text-area-container {
+    border-color: $sequence_color_1 !important;
+  }
+  &[data-selected-index='1'] .text-area-container {
+    border-color: $sequence_color_2 !important;
+  }
+  &[data-selected-index='2'] .text-area-container {
+    border-color: $sequence_color_3 !important;
+  }
+  &[data-selected-index='3'] .text-area-container {
+    border-color: $sequence_color_4 !important;
+  }
+  &[data-selected-index='4'] .text-area-container {
+    border-color: $sequence_color_5 !important;
+  }
+  &[data-selected-index='5'] .text-area-container {
+    border-color: $sequence_color_6 !important;
+  }
+  &[data-selected-index='6'] .text-area-container {
+    border-color: $sequence_color_7 !important;
+  }
+  &[data-selected-index='7'] .text-area-container {
+    border-color: $sequence_color_8 !important;
+  }
 }
