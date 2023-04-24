@@ -11,6 +11,7 @@ import GuidesControllers from './controllers'
 import GuidesSerializers from './serializers'
 import GuidesCLI from './cli'
 import GuidesSpecs from './specs'
+import GuidesDeployment from './deployment'
 
 export default function GuidesDocs() {
   return (
@@ -42,6 +43,7 @@ export default function GuidesDocs() {
         <GuidesCLI />
         <GuidesDatabase />
         <GuidesSpecs />
+        <GuidesDeployment />
       </div>
     </div>
   )
