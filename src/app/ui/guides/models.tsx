@@ -220,10 +220,28 @@ await user.destroy()
 import User from 'app/models/user'
 import { ops } from 'psychic'
 
-// TODO: implement this!
 await User
   .where({ email: ops.like('%y@%') })
   .destroy()
+`}
+      ></CodeExample>
+
+      <h3>STI (single table inheritance)</h3>
+      <CodeExample
+        id="models-sti-example"
+        description={
+          <p>
+            Single table inheritance allows one to have model inheritance supported at the database level by
+            using a type field to capture the class name. Doing this automatically applies default scopes to
+            the class ensuring that the type restriction is always applied.
+          </p>
+        }
+        codeExample={`\
+import User from 'app/models/user'
+
+@Sti()
+class AdminUser extends User {
+}
 `}
       ></CodeExample>
 
