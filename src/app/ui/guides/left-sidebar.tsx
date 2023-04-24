@@ -141,7 +141,7 @@ export default function GuidesLeftSidebar() {
           </a>
           <a href="#cli-generators">generators</a>
           <a href="#cli-spec-runners">spec runners</a>
-          <a href="#cli-dev">dev server</a>
+          <a href="#cli-dev-server">dev server</a>
           <a href="#cli-repl">repl</a>
           <a href="#cli-introspection">introspection</a>
         </nav>
