@@ -10,6 +10,7 @@ import GuidesConfiguration from './configuration'
 import GuidesControllers from './controllers'
 import GuidesSerializers from './serializers'
 import GuidesCLI from './cli'
+import GuidesSpecs from './specs'
 
 export default function GuidesDocs() {
   return (
@@ -40,6 +41,7 @@ export default function GuidesDocs() {
         <GuidesSerializers />
         <GuidesCLI />
         <GuidesDatabase />
+        <GuidesSpecs />
       </div>
     </div>
   )
