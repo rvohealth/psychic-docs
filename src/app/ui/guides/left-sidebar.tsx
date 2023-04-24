@@ -68,6 +68,7 @@ export default function GuidesLeftSidebar() {
             <a href="#models-querying-find">find</a>
             <a href="#models-querying-find-by">findBy</a>
             <a href="#models-querying-where">where</a>
+            <a href="#models-querying-ops">ops</a>
             <a href="#models-querying-limit">limit</a>
             <a href="#models-querying-order">order</a>
             <a href="#models-querying-joins">joins</a>
@@ -76,6 +77,7 @@ export default function GuidesLeftSidebar() {
             <a href="#models-querying-last">last</a>
             <a href="#models-querying-pluck">pluck</a>
             <a href="#models-querying-all">all</a>
+            <a href="#models-querying-sql">sql</a>
           </nav>
 
           <nav>

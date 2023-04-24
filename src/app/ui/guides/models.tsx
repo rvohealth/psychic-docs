@@ -4,6 +4,7 @@ import GuidesModelAssociations from './models/associations'
 import GuidesModelHooks from './models/hooks'
 import GuidesModelValidations from './models/validations'
 import GuidesModelScopes from './models/scopes'
+import GuidesModelsQuerying from './models/querying'
 
 export default function GuidesModels() {
   return (
@@ -226,6 +227,7 @@ await User
 `}
       ></CodeExample>
 
+      <GuidesModelsQuerying />
       <GuidesModelAssociations />
       <GuidesModelHooks />
       <GuidesModelValidations />
