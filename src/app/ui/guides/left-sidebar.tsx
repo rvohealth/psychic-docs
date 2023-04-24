@@ -130,9 +130,9 @@ export default function GuidesLeftSidebar() {
           <a className="subgroup-title serializers" href="#serializers">
             serializers
           </a>
-          <a href="#serializers-generate">generating</a>
+          <a href="#serializers-generating">generating</a>
           <a href="#serializers-attributes">attributes</a>
-          <a href="#serializers-attributes">usage</a>
+          <a href="#serializers-usage">usage</a>
         </nav>
 
         <nav>

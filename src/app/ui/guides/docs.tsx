@@ -8,6 +8,7 @@ import GuidesModels from './models'
 import GuidesRouting from './routing'
 import GuidesConfiguration from './configuration'
 import GuidesControllers from './controllers'
+import GuidesSerializers from './serializers'
 
 export default function GuidesDocs() {
   return (
@@ -35,6 +36,7 @@ export default function GuidesDocs() {
         <GuidesRouting />
         <GuidesControllers />
         <GuidesModels />
+        <GuidesSerializers />
         <GuidesDatabase />
       </div>
     </div>
