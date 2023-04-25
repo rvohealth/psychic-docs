@@ -8,7 +8,7 @@ export default function GuidesCLI() {
 
       <p>the psychic cli provides many commands for controlling your psychic app.</p>
 
-      <h2 id="cli-generators">Generators</h2>
+      <h3 id="cli-generators">Generators</h3>
       <CodeExample
         id="cli-generators-example"
         expandLevel={2}
@@ -34,7 +34,7 @@ psy g:resource user email id created_at
 `}
       ></CodeExample>
 
-      <h2 id="cli-spec-runners">Spec runners</h2>
+      <h3 id="cli-spec-runners">Spec runners</h3>
       <CodeExample
         id="cli-spec-runners"
         expandLevel={2}
@@ -49,7 +49,7 @@ psy fspec
 `}
       ></CodeExample>
 
-      <h2 id="cli-dev-server">Dev server</h2>
+      <h3 id="cli-dev-server">Dev server</h3>
       <CodeExample
         id="cli-dev-server-example"
         expandLevel={2}
@@ -61,7 +61,7 @@ psy dev
 `}
       ></CodeExample>
 
-      <h2 id="cli-repl">REPL</h2>
+      <h3 id="cli-repl">REPL</h3>
       <CodeExample
         id="cli-repl-example"
         expandLevel={2}
@@ -79,7 +79,7 @@ psy console
 `}
       ></CodeExample>
 
-      <h2 id="cli-introspection">introspection</h2>
+      <h3 id="cli-introspection">introspection</h3>
       <CodeExample
         id="cli-repl-example"
         expandLevel={2}
