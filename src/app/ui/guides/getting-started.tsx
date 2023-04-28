@@ -309,11 +309,14 @@ $ psy dev
         codeExample={`\
 // app/models/user.ts
 
-import { BeforeCreate, BeforeUpdate, Column, Validates, Hash, dream } from 'psychic'
+import { Dream, BeforeCreate, BeforeUpdate, Column, Validates, Hash } from 'psychic'
 import { DateTime } from 'luxon'
 
-const Dream = dream('users')
 export default class User extends Dream {
+  public readonly get table() {
+    return 'users' as const
+  }
+
   public id: number
   public name: string
   public created_at: DateTime
@@ -374,8 +377,11 @@ import { DateTime } from 'luxon'
 import { dream, Column, BelongsTo } from 'dream'
 import User from './user'
 
-const Dream = dream('todos')
 export default class Todo extends Dream {
+  public readonly get table() {
+    return 'todos' as const
+  }
+
   public id: number
   public user_id: number
   public content: string

@@ -25,8 +25,11 @@ export default function GuidesModelHooks() {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
   ...
@@ -52,8 +55,11 @@ export default class Post extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
   ...
@@ -77,8 +83,11 @@ export default class Post extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
   ...
@@ -102,8 +111,11 @@ export default class Post extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
   ...
@@ -128,8 +140,11 @@ export default class Post extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
   ...
@@ -155,8 +170,11 @@ export default class Post extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
   ...
@@ -180,8 +198,11 @@ export default class Post extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
   ...
@@ -205,8 +226,11 @@ export default class Post extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
   ...

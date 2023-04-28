@@ -25,8 +25,11 @@ export default function GuidesModelAssociations() {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
 
@@ -49,8 +52,11 @@ export default class Post extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('users')
 export default class User extends Dream {
+  public readonly get table() {
+    return 'users' as const
+  }
+
   public id: number
   public content: string | null
 
@@ -72,8 +78,11 @@ export default class User extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('users')
 export default class User extends Dream {
+  public readonly get table() {
+    return 'users' as const
+  }
+
   public id: number
   public content: string | null
 
@@ -94,8 +103,11 @@ export default class User extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('comment_replies')
 export default class CommentReply extends Dream {
+  public readonly get table() {
+    return 'comment_replies' as const
+  }
+
   public id: number
   public content: string | null
 
@@ -130,8 +142,11 @@ await reply.user.update({ email: 'someotheremail@howyadoin.biz' })
           </p>
         }
         codeExample={`
-const Dream = dream('comment_replies')
 export default class CommentReply extends Dream {
+  public readonly get table() {
+    return 'comment_replies' as const
+  }
+
   public id: number
   public content: string | null
 

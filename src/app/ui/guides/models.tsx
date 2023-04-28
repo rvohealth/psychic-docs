@@ -23,13 +23,16 @@ export default function GuidesModels() {
           </p>
         }
         codeExample={`
-import { dream, HasOne, BelongsTo, HasMany, BeforeCreate, AfterSave, AfterCreate, AfterUpdate } from 'psychic'
+import { Dream, HasOne, BelongsTo, HasMany, BeforeCreate, AfterSave, AfterCreate, AfterUpdate } from 'psychic'
 import Comment from './comment'
 import CommentReaction from './comment-reaction'
 import User from './user'
 
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
   public content: string | null
 

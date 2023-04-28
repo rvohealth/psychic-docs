@@ -20,8 +20,11 @@ export default function GuidesModelQueries() {
           </p>
         }
         codeExample={`
-const Dream = dream('users')
 export default class User extends Dream {
+  public readonly get table() {
+    return 'users' as const
+  }
+
   public id: number
   public email: string | null
 

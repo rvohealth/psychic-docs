@@ -50,10 +50,13 @@ export default (r: PsychicRouter) => {
           </p>
         }
         codeExample={`\
-import { BeforeCreate, BeforeUpdate, Column, Validates, Hash, dream } from 'psychic'
+import { Dream, BeforeCreate, BeforeUpdate, Column, Validates, Hash } from 'psychic'
 
-const Dream = dream('users')
 export default class User extends Dream {
+  public readonly get table() {
+    return 'users' as const
+  }
+
   public id: number
   public name: string
   public created_at: Date

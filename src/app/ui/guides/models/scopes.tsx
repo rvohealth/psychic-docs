@@ -19,8 +19,11 @@ export default function GuidesModelScopes() {
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public name: string
   ...
 
@@ -47,8 +50,11 @@ const posts = await Post.scope('withFunnyName')
           </p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public name: string
   ...
 

@@ -19,8 +19,11 @@ export default function GuidesModelValidations() {
           <p>Use the presence validator when you want to guarantee a field is not blank before saving.</p>
         }
         codeExample={`
-const Dream = dream('posts')
 export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
 
   @Validates('presence')
@@ -38,8 +41,11 @@ export default class Post extends Dream {
           </p>
         }
         codeExample={`
-const Dream = dream('users')
 export default class User extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
   public id: number
 
   @Validates('contains', '@')
