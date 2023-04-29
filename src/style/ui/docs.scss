@@ -17,10 +17,18 @@
       background: #020016;
       font-size: 20px;
       color: rgb(48, 48, 48);
-      // background: url(../../../public/psychic-bg-1.png);
+
+      background: rgb(20, 0, 36);
+      background: linear-gradient(#140024, #250441 66.83%, #5f0050);
+
+      .icon {
+        margin-top: 20px;
+        font-size: 40px;
+        color: rgb(255, 0, 214);
+      }
 
       h2 {
-        margin-top: 100px;
+        margin-top: calc(55vh - 80px);
         font-weight: 400;
         font-size: 140px;
         margin-bottom: 20px;

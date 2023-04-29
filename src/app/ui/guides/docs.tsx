@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { IoChevronDownCircle as ChevronDownIcon } from 'react-icons/io5'
 import Logo from '../logo'
 import GuidesDatabase from './database'
 import GuidesGettingStarted from './getting-started'
@@ -27,6 +28,9 @@ export default function GuidesDocs() {
           <br />
           <Link to="/api">API documentation</Link>
         </nav>
+        <a href="#docs-content">
+          <ChevronDownIcon className="icon" />
+        </a>
       </div>
 
       <div id="docs-content" className="docs-content">
