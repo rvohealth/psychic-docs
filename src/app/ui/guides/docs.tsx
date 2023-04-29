@@ -13,24 +13,28 @@ import GuidesSerializers from './serializers'
 import GuidesCLI from './cli'
 import GuidesSpecs from './specs'
 import GuidesDeployment from './deployment'
+import NightSky from '../night-sky'
 
 export default function GuidesDocs() {
   return (
     <div className="docs guides">
       <div className="hero">
-        <Logo size="large" />
-        <div>
-          <p className="subtext">An express-driven web framework with a jaw-dropping ORM built on Kysely</p>
-        </div>
+        <NightSky />
+        <div className="above-night-sky">
+          <Logo size="large" />
+          <div>
+            <p className="subtext">An express-driven web framework with a jaw-dropping ORM built on Kysely</p>
+          </div>
 
-        <nav>
-          <a href="#docs-content">Guides</a>
-          <br />
-          <Link to="/api">API documentation</Link>
-        </nav>
-        <a href="#docs-content">
-          <ChevronDownIcon className="icon" />
-        </a>
+          <nav>
+            <a href="#docs-content">Guides</a>
+            <br />
+            <Link to="/api">API documentation</Link>
+          </nav>
+          <a href="#docs-content">
+            <ChevronDownIcon className="icon" />
+          </a>
+        </div>
       </div>
 
       <div id="docs-content" className="docs-content">

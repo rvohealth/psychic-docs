@@ -1,5 +1,6 @@
 .left-sidebar {
   position: fixed;
+  z-index: 0;
   display: inline-block;
   width: calc(250px - 40px);
   height: calc(100vh - 40px);
