@@ -33,18 +33,35 @@
       }
 
       h2 {
-        margin-top: calc(55vh - 80px);
+        margin-top: calc(50vh - 80px);
         font-weight: 400;
         font-size: 140px;
         margin-bottom: 20px;
       }
 
       .subtext {
-        color: white;
         max-width: 600px;
         display: inline-block;
-        margin-bottom: 80px;
+        margin-bottom: 20px;
         font-size: 26px;
+      }
+
+      .subtext-container {
+        // background: #b69fc9;
+        // border: solid 2px #e9b4e7;
+        // box-shadow: rgba(255, 4, 98, 0.23) 0px 0px 30px;
+        padding: 32px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+
+      .subtext-container,
+      .subtext-container a {
+        color: white;
+      }
+
+      .subtext-container a {
+        font-weight: 600;
       }
     }
 

@@ -23,14 +23,18 @@ export default function GuidesDocs() {
         <div className="above-night-sky">
           <Logo size="large" />
           <div>
-            <p className="subtext">An express-driven web framework with a jaw-dropping ORM built on Kysely</p>
-          </div>
+            <div className="subtext-container">
+              <p className="subtext">
+                An express-driven web framework with a jaw-dropping ORM built on Kysely
+              </p>
 
-          <nav>
-            <a href="#docs-content">Guides</a>
-            <br />
-            <Link to="/api">API documentation</Link>
-          </nav>
+              <nav>
+                <a href="#docs-content">Guides</a>
+                <br />
+                <Link to="/api">API documentation</Link>
+              </nav>
+            </div>
+          </div>
           <a href="#docs-content">
             <ChevronDownIcon className="icon" />
           </a>
