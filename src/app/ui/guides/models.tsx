@@ -229,7 +229,28 @@ await User
 `}
       ></CodeExample>
 
-      <h3>STI (single table inheritance)</h3>
+      <h3 id="models-transactions">Transactions</h3>
+      <CodeExample
+        id="models-transactions-example"
+        description={
+          <p>
+            Transactions can be built using any model class, but typcally would be done from the base Dream
+            class, like so:
+          </p>
+        }
+        codeExample={`\
+import { Dream } from 'psychic'
+
+...
+
+await Dream.transaction(async txn => {
+  const user = await User.create({ ... }, txn)
+  await Post.create({ user })
+})
+`}
+      ></CodeExample>
+
+      <h3 id="models-sti">STI (single table inheritance)</h3>
       <CodeExample
         id="models-sti-example"
         description={

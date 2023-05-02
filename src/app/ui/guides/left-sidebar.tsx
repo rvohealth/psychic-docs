@@ -59,6 +59,7 @@ export default function GuidesLeftSidebar() {
           <a href="#models-create">creating</a>
           <a href="#models-update">updating</a>
           <a href="#models-destroy">destroying</a>
+          <a href="#models-transactions">transactions</a>
           <a href="#models-sti">single table inheritance</a>
 
           <nav>
@@ -96,13 +97,17 @@ export default function GuidesLeftSidebar() {
               hooks
             </a>
             <a href="#models-hooks-before-create">before create</a>
-            <a href="#models-hooks-before-create">before update</a>
-            <a href="#models-hooks-before-create">before save</a>
-            <a href="#models-hooks-before-create">before destroy</a>
+            <a href="#models-hooks-before-update">before update</a>
+            <a href="#models-hooks-before-save">before save</a>
+            <a href="#models-hooks-before-destroy">before destroy</a>
             <a href="#models-hooks-after-create">after create</a>
-            <a href="#models-hooks-after-create">after update</a>
-            <a href="#models-hooks-after-create">after save</a>
-            <a href="#models-hooks-after-create">after destroy</a>
+            <a href="#models-hooks-after-update">after update</a>
+            <a href="#models-hooks-after-save">after save</a>
+            <a href="#models-hooks-after-destroy">after destroy</a>
+            <a href="#models-hooks-after-create-commit">after create commit</a>
+            <a href="#models-hooks-after-update-commit">after update commit</a>
+            <a href="#models-hooks-after-save-commit">after save commit</a>
+            <a href="#models-hooks-after-destroy-commit">after destroy commit</a>
           </nav>
 
           <nav>

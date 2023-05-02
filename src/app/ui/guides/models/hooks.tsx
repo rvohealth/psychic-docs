@@ -128,9 +128,9 @@ export default class Post extends Dream {
 `}
       ></CodeExample>
 
-      <h4 id="models-hooks-before-create">After create</h4>
+      <h4 id="models-hooks-after-create">After create</h4>
       <CodeExample
-        id="models-hooks-before-create-example"
+        id="models-hooks-after-create-example"
         expandLevel={2}
         description={
           <p>
@@ -159,9 +159,9 @@ export default class Post extends Dream {
 `}
       ></CodeExample>
 
-      <h4 id="models-hooks-before-update">After update</h4>
+      <h4 id="models-hooks-after-update">After update</h4>
       <CodeExample
-        id="models-hooks-before-update-example"
+        id="models-hooks-after-update-example"
         expandLevel={2}
         description={
           <p>
@@ -187,9 +187,9 @@ export default class Post extends Dream {
 `}
       ></CodeExample>
 
-      <h4 id="models-hooks-before-save">After save</h4>
+      <h4 id="models-hooks-after-save">After save</h4>
       <CodeExample
-        id="models-hooks-before-save-example"
+        id="models-hooks-after-save-example"
         expandLevel={2}
         description={
           <p>
@@ -215,9 +215,9 @@ export default class Post extends Dream {
 `}
       ></CodeExample>
 
-      <h4 id="models-hooks-before-destroy">After destroy</h4>
+      <h4 id="models-hooks-after-destroy">After destroy</h4>
       <CodeExample
-        id="models-hooks-before-destroy-example"
+        id="models-hooks-after-destroy-example"
         expandLevel={2}
         description={
           <p>
@@ -236,6 +236,126 @@ export default class Post extends Dream {
   ...
 
   @AfterDestroy()
+  public async doSomething() {
+    // ... do whatever you want here!
+  }
+}
+`}
+      ></CodeExample>
+
+      <h3 id="models-hooks-commit-hooks">Commit hooks</h3>
+      <p>
+        In contrast to ordinary after hooks (like AfterCreate, AfterUpdate, etc...), we have commit variants.
+        Our implementation is similar to the approach taken by Ruby on Rails, whereby our commit hooks are
+        bound to an existing transaction if it exists, and will wait until after the commit has been made at
+        the transaction level to run your callback.
+      </p>
+
+      <h4 id="models-hooks-after-create-commit">After create commit</h4>
+      <CodeExample
+        id="models-hooks-after-create-commit-example"
+        expandLevel={2}
+        description={
+          <p>
+            AfterCreateCommit hooks are run after a new record is saved to the database and the transaction is
+            committed.
+          </p>
+        }
+        codeExample={`
+export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
+  public id: number
+  public content: string | null
+  ...
+
+  @AfterCreateCommit()
+  public async yourThing() {
+    // ... your code
+  }
+}
+`}
+      ></CodeExample>
+
+      <h4 id="models-hooks-after-update-commit">After update commit</h4>
+      <CodeExample
+        id="models-hooks-after-update-commit-example"
+        expandLevel={2}
+        description={
+          <p>
+            AfterUpdateCommit hooks are run whenever an existing (meanin, previously-saved) record has been
+            updated and the encapsulating transaction has been committed, and can be leveraged like so:
+          </p>
+        }
+        codeExample={`
+export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
+  public id: number
+  public content: string | null
+  ...
+
+  @AfterUpdateCommit()
+  public async doSomething() {
+    // ... do whatever you want here!
+  }
+}
+`}
+      ></CodeExample>
+
+      <h4 id="models-hooks-after-save-commit">After save commit</h4>
+      <CodeExample
+        id="models-hooks-after-save-commit-example"
+        expandLevel={2}
+        description={
+          <p>
+            AfterSaveCommit hooks are run whenever either an existing OR new record has been written to the DB
+            and the encapsulating transaction has been committed, and can be leveraged like so:
+          </p>
+        }
+        codeExample={`
+export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
+  public id: number
+  public content: string | null
+  ...
+
+  @AfterSaveCommit()
+  public async doSomething() {
+    // ... do whatever you want here!
+  }
+}
+`}
+      ></CodeExample>
+
+      <h4 id="models-hooks-after-destroy-commit">After destroy commit</h4>
+      <CodeExample
+        id="models-hooks-after-destroy-commit-example"
+        expandLevel={2}
+        description={
+          <p>
+            AfterDestroyCommit hooks are run whenever an existing record has been destroyed from the DB and
+            the transaction has been committed, and can be leveraged like so:
+          </p>
+        }
+        codeExample={`
+export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
+  public id: number
+  public content: string | null
+  ...
+
+  @AfterDestroyCommit()
   public async doSomething() {
     // ... do whatever you want here!
   }
