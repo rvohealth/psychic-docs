@@ -21,7 +21,6 @@ export default function GuidesSpecs() {
             your server or front end. The config for them is located in `spec/unit/jest.config.js`
           </p>
         }
-        theme="dark"
         codeExample={`\
 import { PsychicServer } from 'psychic'
 import * as request from 'supertest'
@@ -49,7 +48,6 @@ describe('GET /ping', () => {
             them with puppeteer.
           </p>
         }
-        theme="dark"
         codeExample={`\
 describe('ensure puppeteer is working', () => {
   it('accepts the request', async () => {

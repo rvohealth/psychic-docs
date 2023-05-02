@@ -86,11 +86,11 @@
 
   &.dark {
     .notation-outer-container.code {
-      background: #240022;
-      border: solid #350037 3px;
+      background: #300030;
+      // border: solid #350037 3px;
 
       > pre {
-        background: #240022 !important;
+        background: #300030 !important;
       }
     }
   }
