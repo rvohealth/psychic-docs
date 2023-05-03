@@ -12,7 +12,6 @@
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
     "css-doodle": "^0.34.9",
-    "nnt": "https://github.com/avocadojesus/nnt#affe88a",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-abc": "^0.4.0",
