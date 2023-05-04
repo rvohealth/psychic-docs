@@ -244,8 +244,9 @@ import { Dream } from 'psychic'
 ...
 
 await Dream.transaction(async txn => {
-  const user = await User.create({ ... }, txn)
-  await Post.create({ user })
+  const user = await User.txn(txn).create({ ... })
+  await Post.txn(txn).create({ user })
+  const post = await Post.txn(txn).first()
 })
 `}
       ></CodeExample>
