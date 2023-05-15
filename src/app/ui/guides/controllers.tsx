@@ -37,25 +37,6 @@ export default class HowyadoinsController extends PsychicController {
 `}
       ></CodeExample>
 
-      <CodeExample
-        id="controllers-generating-example-2"
-        description={<p>This will spit out the followig:</p>}
-        codeExample={`\
-import { PsychicController, Params } from 'psychic'
-
-export default class HowyadoinsController extends PsychicController {
-  public async create() {
-  }
-
-  public async update() {
-  }
-
-  public async destroy() {
-  }
-}
-`}
-      ></CodeExample>
-
       <h3 id="controllers-request">request</h3>
 
       <CodeExample
