@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: psychic-docs
+  description: React app containing guides docs for Psychic and Dream
+  annotations:
+    github.com/project-slug: rvohealth/psychic-docs
+spec:
+  type: service # can be one of: service, library, website, event-driven-service
+  lifecycle: production # can be one of: experimental, production, deprecated
+  owner: unassigned # your existing tech team in Backstage, i.e. team-developer-platforms
