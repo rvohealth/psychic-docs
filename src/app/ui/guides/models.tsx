@@ -255,18 +255,72 @@ await Dream.transaction(async txn => {
       <CodeExample
         id="models-sti-example"
         description={
+          <>
+            <p>
+              Single table inheritance allows one to have model inheritance supported at the database level by
+              using a type field to capture the class name. Doing this automatically applies default scopes to
+              the class ensuring that the type restriction is always applied.
+            </p>
+            <p>
+              Because Psychic provides model indexing for nested namespaces, we recommend you follow a Base
+              model pattern, as shown below:
+            </p>
+          </>
+        }
+        codeExample={`\
+class Pet.Base exteds Dream {
+  @BelongsTo(() => User)
+  public user: User
+  public user_id: number
+}
+
+@Sti()
+class Cat extends Pet.Base {
+}
+
+@Sti()
+class NonCat extends Pet.Base {
+}
+`}
+      ></CodeExample>
+
+      <CodeExample
+        id="models-sti-corresponding-model-example"
+        description={
           <p>
-            Single table inheritance allows one to have model inheritance supported at the database level by
-            using a type field to capture the class name. Doing this automatically applies default scopes to
-            the class ensuring that the type restriction is always applied.
+            On a corresponding model, you can define a has one or has many relationship with the STI models
+            like so:
           </p>
         }
         codeExample={`\
-import User from 'app/models/user'
-
-@Sti()
-class AdminUser extends User {
+import Pet from './pet'
+class User extends Dream {
+  ...
+  @HasMany(() => [Pet.Cat, Pet.NonCat])
+  public pets: Pet[]
 }
+`}
+      ></CodeExample>
+
+      <CodeExample
+        id="models-sti-loading-sti-models-example"
+        description={<p>Now you can easily load your models from the corresponding model like so:</p>}
+        codeExample={`\
+const user = await User.first()
+await user.load('pets')
+
+user.pets
+// [Cat{}, Cat{}, NonCat{}, etc...]
+`}
+      ></CodeExample>
+
+      <CodeExample
+        id="models-sti-loading-sti-eager-loading-models-example"
+        description={<p>You can also eager load your STI models like so:</p>}
+        codeExample={`\
+const user = await User.include('pets').first()
+user.pets
+// [Cat{}, Cat{}, NonCat{}, etc...]
 `}
       ></CodeExample>
 

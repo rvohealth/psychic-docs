@@ -33,7 +33,7 @@ export default class Post extends Dream {
   }
 }
 
-const posts = await Post.scope('withFunnyName')
+const posts = await Post.scope('withFunnyName').all()
 `}
       ></CodeExample>
 
