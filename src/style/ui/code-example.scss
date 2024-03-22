@@ -16,6 +16,25 @@
     display: flex;
   }
 
+  .options {
+    margin-bottom: 20px;
+
+    button {
+      color: #31ddaa;
+      border: solid 2px #31ddaa;
+      background: transparent;
+      border-radius: 8px;
+      padding: 4px;
+      font-size: 14px;
+      margin-right: 10px;
+
+      &.active {
+        background: #31ddaa;
+        color: white;
+      }
+    }
+  }
+
   .notation-main,
   .description {
     width: calc(65%);
@@ -31,14 +50,13 @@
     &.code {
       padding-bottom: 20px;
       text-align: left;
-      background: #244003;
-      background: #180036;
+      background: #f6f6f6 !important;
       font-size: 18px;
+      border-radius: 10px;
 
       pre {
         padding: 40px !important;
-        background: #244003 !important;
-        background: #180036 !important;
+        background: transparent !important;
       }
     }
   }
@@ -54,7 +72,7 @@
         background: #9e0dff;
         padding: 20px;
         border-radius: 3px;
-        color: rgb(48, 189, 187);
+        color: #25fffc;
 
         li {
           background: transparent !important;
@@ -86,11 +104,11 @@
 
   &.dark {
     .notation-outer-container.code {
-      background: #300030;
+      background: transparent;
       // border: solid #350037 3px;
 
       > pre {
-        background: #300030 !important;
+        background: transparent !important;
       }
     }
   }

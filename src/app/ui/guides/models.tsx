@@ -17,7 +17,7 @@ export default function GuidesModels() {
         description={
           <p>
             To power the ORM under the hood, psychic is relying on the
-            <a href="https://github.com/avocadojesus/dream">dream</a> library. This library was written custom
+            <a href="https://github.com/@rvohealth/dream">dream</a> library. This library was written custom
             for the Psychic framework, and comes with some pretty incredible bells and whistles attached to
             make your domains sing.
           </p>
@@ -101,8 +101,8 @@ psy g:resource todo user:belongs_to content:string
         description={
           <p>
             To create an instance of a psychic model, use the static <span className="hl">.create</span>{' '}
-            method.&nbsp; This method will automatically fill the id, created_at and updated_at fields on your
-            model.
+            method.&nbsp; This method will automatically fill the id, <span className="hl">createdAt</span>and{' '}
+            <span className="hl">updatedAt</span> fields on your model.
           </p>
         }
         codeExample={`\

@@ -1,3 +1,4 @@
+.nnt-logo h1,
 .nnt-logo h2 {
   display: inline-block;
   -webkit-text-stroke-width: 3px;
@@ -15,7 +16,12 @@
   -webkit-text-stroke-color: #04ebff;
   -webkit-text-stroke-color: #ff334c;
   text-shadow: #e904ff 0px 0px 30px;
-  text-shadow: rgba(255, 4, 98, 0.63) 0px 0px 30px;
-  text-shadow: rgba(163, 0, 61, 0.37) 0px 0px 30px;
+  text-shadow: rgba(255, 4, 98, 0.13) 0px 0px 30px;
+  text-shadow: rgba(163, 0, 61, 0.12) 0px 0px 30px;
   color: #f106ff;
+
+  &.small {
+    text-shadow: none !important;
+    -webkit-text-stroke-color: none !important;
+  }
 }

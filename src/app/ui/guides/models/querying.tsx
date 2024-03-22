@@ -151,7 +151,7 @@ const users = await User.where(...).limit(3).all()
           </p>
         }
         codeExample={`
-const users = await User.order('created_at', 'asc').all()
+const users = await User.order('createdAt', 'asc').all()
 `}
       ></CodeExample>
 
