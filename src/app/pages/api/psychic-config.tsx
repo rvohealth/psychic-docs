@@ -1,17 +1,16 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import APILeftSidebar from "../../ui/api/left-sidebar";
-import CodeExample from "../../ui/code-example";
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import APILeftSidebar from '../../ui/api/left-sidebar'
 
 export default function APIPsychicConfigPage() {
-  const location = useLocation();
+  const location = useLocation()
   useEffect(() => {
-    if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
-  }, [location.hash]);
+    if (location.hash) document.querySelector(location.hash)?.scrollIntoView()
+  }, [location.hash])
 
   return (
     <div className="page api psychic-config">
-      <APILeftSidebar expanded={["psychic-config"]} />
+      <APILeftSidebar expanded={['psychic-config']} />
 
       <div className="docs api">
         <div className="documentation">
@@ -46,5 +45,5 @@ export default function APIPsychicConfigPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }

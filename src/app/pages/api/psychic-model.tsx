@@ -1,34 +1,30 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import APILeftSidebar from "../../ui/api/left-sidebar";
-import CodeExample from "../../ui/code-example";
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import APILeftSidebar from '../../ui/api/left-sidebar'
 
 export default function APIPsychicModelPage() {
-  const location = useLocation();
+  const location = useLocation()
   useEffect(() => {
-    if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
-  }, [location.hash]);
+    if (location.hash) document.querySelector(location.hash)?.scrollIntoView()
+  }, [location.hash])
 
   return (
     <div className="page api psychic-model">
-      <APILeftSidebar expanded={["psychic-model"]} />
+      <APILeftSidebar expanded={['psychic-model']} />
 
       <div className="docs api">
         <div className="documentation">
           <h1>PsychicModel</h1>
 
           <p>
-            The PsychicModel class represents the <i>M</i> in the <i>MVC</i>{" "}
-            pattern. Any class&nbsp; extending a PsychicModel should live in the{" "}
-            <span className="hl">app/models</span>&nbsp; folder.
+            The PsychicModel class represents the <i>M</i> in the <i>MVC</i> pattern. Any class&nbsp;
+            extending a PsychicModel should live in the <span className="hl">app/models</span>&nbsp; folder.
           </p>
 
           <p>
-            Since PsychicModel is a light wrapper on top of
-            sequelize-typescript, it is recommended that&nbsp; you visit their
-            documentation site for a full list of all they support. Our
-            documentation will primarily cover&nbsp; things which are not part
-            of the core sequelize-typescript API.
+            Since PsychicModel is a light wrapper on top of sequelize-typescript, it is recommended that&nbsp;
+            you visit their documentation site for a full list of all they support. Our documentation will
+            primarily cover&nbsp; things which are not part of the core sequelize-typescript API.
           </p>
 
           <h2>Static Properties</h2>
@@ -59,5 +55,5 @@ export default function APIPsychicModelPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }

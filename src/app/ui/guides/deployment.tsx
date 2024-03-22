@@ -1,5 +1,4 @@
 import React from 'react'
-import CodeExample from '../code-example'
 
 export default function GuidesDeployment() {
   return (
