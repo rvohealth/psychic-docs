@@ -8,12 +8,12 @@
 
 body {
   background: $light_gray;
-  color: $text_color;
+  color: #2a042f;
   font-size: 18px;
 }
 
 a {
-  color: white;
+  color: rgb(22, 29, 113);
 }
 
 p {
@@ -22,6 +22,6 @@ p {
 
 span.hl {
   border-radius: 3px;
-  color: lighten($pink, 2%);
+  color: #7525d9;
   font-style: italic;
 }

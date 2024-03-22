@@ -14,6 +14,7 @@ import GuidesCLI from './cli'
 import GuidesSpecs from './specs'
 import GuidesDeployment from './deployment'
 import NightSky from '../night-sky'
+import { useEffect, useState } from 'react'
 
 export default function GuidesDocs() {
   return (

@@ -3,11 +3,12 @@
   z-index: 0;
   display: inline-block;
   width: calc(250px - 40px);
-  height: calc(100vh - 40px);
+  height: calc(100vh - 160px);
   padding: 40px 20px;
-  background: #0f010e;
+  background: #e8e8e8;
   overflow-y: auto;
   padding-bottom: 40px;
+  // scroll-behavior: smooth;
 
   .br {
     margin-bottom: 20px;
@@ -25,9 +26,9 @@
       display: inline-block;
       margin-right: 10px;
 
-      &.active {
-        text-decoration: underline;
-      }
+      // &.active {
+      //   text-decoration: underline;
+      // }
     }
   }
 
@@ -43,15 +44,22 @@
 
   nav {
     a {
-      color: $text_color_slam;
-      padding: 3px 0;
+      color: #282828;
+      padding: 5px 0;
       display: block;
       text-decoration: none;
 
-      div {
+      &.active div {
+        background: rgb(79, 79, 79);
+        padding: 6px;
         border-radius: 4px;
+        color: white;
+      }
+
+      div {
+        // border-radius: 4px;
         display: inline-block;
-        padding: 4px 4px;
+        // padding: 4px 4px;
       }
 
       //       &:nth-child(1) div,
@@ -135,6 +143,7 @@
 
       a.subgroup-title {
         color: rgb(30, 225, 241);
+        color: #1d1d1d;
         margin-left: 6px;
       }
 
@@ -142,7 +151,7 @@
         padding: 0 10px;
 
         .subgroup-title {
-          border-bottom: solid thin white;
+          border-bottom: solid 8px rgb(49, 221, 170);
           display: inline-block;
           margin-bottom: 5px;
         }

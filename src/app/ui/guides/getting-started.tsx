@@ -1,12 +1,13 @@
 import React from 'react'
 import CodeExample from '../code-example'
+import CodeExamples from '../code-examples'
 
 export default function GuidesGettingStarted() {
   return (
     <React.Fragment>
       <h2 id="getting-started">Getting started</h2>
 
-      <CodeExample
+      <CodeExamples
         id="getting-started-create-app"
         expandLevel={2}
         description={
@@ -15,13 +16,71 @@ export default function GuidesGettingStarted() {
             do so, open your terminal and type the following in a directory of your choosing:
           </p>
         }
-        codeExample={`\
+        startingOption="basic"
+        options={[
+          { id: 'basic', label: 'basic' },
+          { id: 'api-only', label: 'api only' },
+          { id: 'ws', label: 'websockets' },
+          { id: 'redis', label: 'redis' },
+        ]}
+        codeExamples={[
+          {
+            id: 'basic',
+            example: `\
 cd ~/Sites # or another folder of your choosing
-psy new myapp --api --ws --redis
-`}
+
+# provision a new psychic app with:
+#   * no redis bindings
+#   * no websocket bindings
+#   * a new psychic backend (built on express) serving as a JSON api delivery system
+#   * a new react frontend to connect to your backend
+#   * a ts-jest testing integration plugged into your psychic server to run unit tests against your endpoints
+#   * a jest-puppeteer testing integration support to allow you to drive end-to-end specs that run accross your
+#   *   front end.
+psy new myapp
+`,
+          },
+
+          {
+            id: 'api-only',
+            example: `\
+cd ~/Sites # or another folder of your choosing
+
+# provision a new psychic app with:
+#   * no redis bindings
+#   * no websocket bindings
+#   * a new psychic backend (built on express) serving as a JSON api delivery system
+#   * a ts-jest testing integration plugged into your psychic server to run unit tests against your endpoints
+psy new myapp --api
+`,
+          },
+
+          {
+            id: 'ws',
+            example: `\
+cd ~/Sites # or another folder of your choosing
+
+# provision a new psychic app with websockets enabled.
+# this will enable websockets using the socket.io package.
+psy new myapp --ws
+`,
+          },
+
+          {
+            id: 'redis',
+            example: `\
+cd ~/Sites # or another folder of your choosing
+
+# provision a new psychic app with redis enabled.
+# this will create automatic bindings via the node-redis
+# package.
+psy new myapp --redis
+`,
+          },
+        ]}
         language="bash"
         theme="dark"
-      ></CodeExample>
+      ></CodeExamples>
 
       <h3 id="getting-started-configure-env">Configure your environment</h3>
 
@@ -49,14 +108,14 @@ DB_USER=mypostgresuser
 DB_NAME=myapp_development
 DB_PORT=5432
 DB_HOST=localhost
-APP_ENCRYPTION_KEY='sp4-pki-dftx'
+APP_ENCRYPTION_KEY='sp4-pki-dftx-nsbv7-sjgd7-ksnc-a7n2'
 
 # .env.test
 DB_USER=mypostgresuser
 DB_NAME=myapp_test
 DB_PORT=5432
 DB_HOST=localhost
-APP_ENCRYPTION_KEY='3gy-vg7-fd68'
+APP_ENCRYPTION_KEY='3gy-vg7-fd68-skndn-1u2vv-dknaaao-is'
 `}
       ></CodeExample>
 
@@ -319,15 +378,17 @@ export default class User extends Dream {
 
   public id: number
   public name: string
-  public created_at: DateTime
-  public updated_at: DateTime
+  public createdAt: DateTime
+  public updatedAt: DateTime
 
   @Validates('contains', '@')
   @Validates('presence')
   public email: string
 
   @Validates('length', { min: 4, max: 18 })
-  public password_digest: string
+  public passwordDigest: string
+
+  @Virtual()
   public password?: string | null
 
   @BeforeCreate()
@@ -383,10 +444,10 @@ export default class Todo extends Dream {
   }
 
   public id: number
-  public user_id: number
+  public userId: number
   public content: string
-  public created_at: DateTime
-  public updated_at: DateTime
+  public createdAt: DateTime
+  public updatedAt: DateTime
 
   @BelongsTo(() => User)
   public user: User

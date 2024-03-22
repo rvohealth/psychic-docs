@@ -1,7 +1,9 @@
-export default function Logo({ size = "small" }: { size?: string } = {}) {
+export default function Logo({ size = 'small' }: { size?: string } = {}) {
+  const HTag = size === 'small' ? `h2` : `h1`
+
   return (
     <div className={`nnt-logo ${size}`}>
-      <h2>
+      <HTag>
         <span>p</span>
         <span>s</span>
         <span>y</span>
@@ -9,7 +11,7 @@ export default function Logo({ size = "small" }: { size?: string } = {}) {
         <span>h</span>
         <span>i</span>
         <span>c</span>
-      </h2>
+      </HTag>
     </div>
-  );
+  )
 }

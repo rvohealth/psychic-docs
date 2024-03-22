@@ -4,175 +4,335 @@ export default function GuidesLeftSidebar() {
   return (
     <LeftSidebar mode="guide">
       <nav>
-        <a href="#welcome">welcome</a>
-        <a href="#installation">installation</a>
+        <a href="#welcome">
+          <div>welcome</div>
+        </a>
+        <a href="#installation">
+          <div>installation</div>
+        </a>
 
         <nav>
           <a className="subgroup-title getting-started" href="#getting-started">
-            getting started
+            <div>getting started</div>
           </a>
-          <a href="#getting-started-configure-env">configure env</a>
-          <a href="#getting-started-structure">structure</a>
-          <a href="#getting-started-create-controller">create controller</a>
-          <a href="#getting-started-create-route">create route</a>
-          <a href="#getting-started-start-dev-server">start dev server</a>
-          <a href="#getting-started-create-model">create model</a>
+          <a href="#getting-started-configure-env">
+            <div>configure env</div>
+          </a>
+          <a href="#getting-started-structure">
+            <div>structure</div>
+          </a>
+          <a href="#getting-started-create-controller">
+            <div>create controller</div>
+          </a>
+          <a href="#getting-started-create-route">
+            <div>create route</div>
+          </a>
+          <a href="#getting-started-start-dev-server">
+            <div>start dev server</div>
+          </a>
+          <a href="#getting-started-create-model">
+            <div>create model</div>
+          </a>
         </nav>
 
         <nav>
           <a className="subgroup-title configuration" href="#configuration">
-            configuration
+            <div>configuration</div>
           </a>
-          <a href="#configuration-express">express</a>
-          <a href="#configuration-dream">dream</a>
-          <a href="#configuration-routing">routing</a>
-          <a href="#configuration-ws">websockets</a>
-          <a href="#configuration-redis">redis</a>
+          <a href="#configuration-express">
+            <div>express</div>
+          </a>
+          <a href="#configuration-dream">
+            <div>dream</div>
+          </a>
+          <a href="#configuration-routing">
+            <div>routing</div>
+          </a>
+          <a href="#configuration-ws">
+            <div>websockets</div>
+          </a>
+          <a href="#configuration-redis">
+            <div>redis</div>
+          </a>
         </nav>
 
         <nav>
           <a className="subgroup-title routing" href="#routing">
-            routing
+            <div>routing</div>
           </a>
-          <a href="#routing-configuration">configuration</a>
-          <a href="#routing-crud">crud</a>
-          <a href="#routing-resources">resources</a>
-          <a href="#routing-nesting">nesting</a>
-          <a href="#routing-namespacing">namespacing</a>
+          <a href="#routing-configuration">
+            <div>configuration</div>
+          </a>
+          <a href="#routing-crud">
+            <div>crud</div>
+          </a>
+          <a href="#routing-resources">
+            <div>resources</div>
+          </a>
+          <a href="#routing-nesting">
+            <div>nesting</div>
+          </a>
+          <a href="#routing-namespacing">
+            <div>namespacing</div>
+          </a>
         </nav>
 
         <nav>
           <a className="subgroup-title controllers" href="#controllers">
-            controllers
+            <div>controllers</div>
           </a>
-          <a href="#controllers-generating">generating</a>
-          <a href="#controllers-request">request</a>
-          <a href="#controllers-response">response</a>
-          <a href="#controllers-params">params</a>
+          <a href="#controllers-generating">
+            <div>generating</div>
+          </a>
+          <a href="#controllers-request">
+            <div>request</div>
+          </a>
+          <a href="#controllers-response">
+            <div>response</div>
+          </a>
+          <a href="#controllers-params">
+            <div>params</div>
+          </a>
         </nav>
 
         <nav>
           <a className="subgroup-title models" href="#models">
-            models
+            <div>models</div>
           </a>
-          <a href="#models-generate">generating</a>
-          <a href="#models-create">creating</a>
-          <a href="#models-update">updating</a>
-          <a href="#models-destroy">destroying</a>
-          <a href="#models-transactions">transactions</a>
-          <a href="#models-sti">single table inheritance</a>
+          <a href="#models-generate">
+            <div>generating</div>
+          </a>
+          <a href="#models-create">
+            <div>creating</div>
+          </a>
+          <a href="#models-update">
+            <div>updating</div>
+          </a>
+          <a href="#models-destroy">
+            <div>destroying</div>
+          </a>
+          <a href="#models-transactions">
+            <div>transactions</div>
+          </a>
+          <a href="#models-sti">
+            <div>single table inheritance</div>
+          </a>
 
           <nav>
             <a className="subgroup-title associations" href="#models-querying">
-              querying
+              <div>querying</div>
             </a>
-            <a href="#models-querying-find">find</a>
-            <a href="#models-querying-find-by">findBy</a>
-            <a href="#models-querying-where">where</a>
-            <a href="#models-querying-ops">ops</a>
-            <a href="#models-querying-limit">limit</a>
-            <a href="#models-querying-order">order</a>
-            <a href="#models-querying-joins">joins</a>
-            <a href="#models-querying-includes">includes</a>
-            <a href="#models-querying-first">first</a>
-            <a href="#models-querying-last">last</a>
-            <a href="#models-querying-pluck">pluck</a>
-            <a href="#models-querying-all">all</a>
-            <a href="#models-querying-sql">sql</a>
+            <a href="#models-querying-find">
+              <div>find</div>
+            </a>
+            <a href="#models-querying-find-by">
+              <div>findBy</div>
+            </a>
+            <a href="#models-querying-where">
+              <div>where</div>
+            </a>
+            <a href="#models-querying-ops">
+              <div>ops</div>
+            </a>
+            <a href="#models-querying-limit">
+              <div>limit</div>
+            </a>
+            <a href="#models-querying-order">
+              <div>order</div>
+            </a>
+            <a href="#models-querying-joins">
+              <div>joins</div>
+            </a>
+            <a href="#models-querying-includes">
+              <div>includes</div>
+            </a>
+            <a href="#models-querying-first">
+              <div>first</div>
+            </a>
+            <a href="#models-querying-last">
+              <div>last</div>
+            </a>
+            <a href="#models-querying-pluck">
+              <div>pluck</div>
+            </a>
+            <a href="#models-querying-all">
+              <div>all</div>
+            </a>
+            <a href="#models-querying-sql">
+              <div>sql</div>
+            </a>
           </nav>
 
           <nav>
             <a className="subgroup-title associations" href="#models-associations">
-              associations
+              <div>associations</div>
             </a>
-            <a href="#models-associations-belongs-to">belongs to</a>
-            <a href="#models-associations-has-one">has one</a>
-            <a href="#models-associations-has-many">has many</a>
-            <a href="#models-associations-through">through</a>
-            <a href="#models-associations-polymorphism">polymorphism</a>
+            <a href="#models-associations-belongs-to">
+              <div>belongs to</div>
+            </a>
+            <a href="#models-associations-has-one">
+              <div>has one</div>
+            </a>
+            <a href="#models-associations-has-many">
+              <div>has many</div>
+            </a>
+            <a href="#models-associations-through">
+              <div>through</div>
+            </a>
+            <a href="#models-associations-polymorphism">
+              <div>polymorphism</div>
+            </a>
           </nav>
 
           <nav>
             <a className="subgroup-title hooks" href="#models-hooks">
-              hooks
+              <div>hooks</div>
             </a>
-            <a href="#models-hooks-before-create">before create</a>
-            <a href="#models-hooks-before-update">before update</a>
-            <a href="#models-hooks-before-save">before save</a>
-            <a href="#models-hooks-before-destroy">before destroy</a>
-            <a href="#models-hooks-after-create">after create</a>
-            <a href="#models-hooks-after-update">after update</a>
-            <a href="#models-hooks-after-save">after save</a>
-            <a href="#models-hooks-after-destroy">after destroy</a>
-            <a href="#models-hooks-after-create-commit">after create commit</a>
-            <a href="#models-hooks-after-update-commit">after update commit</a>
-            <a href="#models-hooks-after-save-commit">after save commit</a>
-            <a href="#models-hooks-after-destroy-commit">after destroy commit</a>
+            <a href="#models-hooks-before-create">
+              <div>before create</div>
+            </a>
+            <a href="#models-hooks-before-update">
+              <div>before update</div>
+            </a>
+            <a href="#models-hooks-before-save">
+              <div>before save</div>
+            </a>
+            <a href="#models-hooks-before-destroy">
+              <div>before destroy</div>
+            </a>
+            <a href="#models-hooks-after-create">
+              <div>after create</div>
+            </a>
+            <a href="#models-hooks-after-update">
+              <div>after update</div>
+            </a>
+            <a href="#models-hooks-after-save">
+              <div>after save</div>
+            </a>
+            <a href="#models-hooks-after-destroy">
+              <div>after destroy</div>
+            </a>
+            <a href="#models-hooks-after-create-commit">
+              <div>after create commit</div>
+            </a>
+            <a href="#models-hooks-after-update-commit">
+              <div>after update commit</div>
+            </a>
+            <a href="#models-hooks-after-save-commit">
+              <div>after save commit</div>
+            </a>
+            <a href="#models-hooks-after-destroy-commit">
+              <div>after destroy commit</div>
+            </a>
           </nav>
 
           <nav>
             <a className="subgroup-title " href="#models-validations">
-              validations
+              <div>validations</div>
             </a>
-            <a href="#models-validations-presence">presence</a>
-            <a href="#models-validations-contains">contains</a>
-            <a href="#models-validations-numericality">numericality</a>
-            <a href="#models-validations-inclusion">inclusion</a>
-            <a href="#models-validations-exclusion">exclusion</a>
-            <a href="#models-validations-custom">custom</a>
+            <a href="#models-validations-presence">
+              <div>presence</div>
+            </a>
+            <a href="#models-validations-contains">
+              <div>contains</div>
+            </a>
+            <a href="#models-validations-numericality">
+              <div>numericality</div>
+            </a>
+            <a href="#models-validations-inclusion">
+              <div>inclusion</div>
+            </a>
+            <a href="#models-validations-exclusion">
+              <div>exclusion</div>
+            </a>
+            <a href="#models-validations-custom">
+              <div>custom</div>
+            </a>
           </nav>
 
           <nav>
             <a className="subgroup-title " href="#models-scopes">
-              scopes
+              <div>scopes</div>
             </a>
-            <a href="#models-scopes-usage">usage</a>
-            <a href="#models-scopes-default">default scopes</a>
+            <a href="#models-scopes-usage">
+              <div>usage</div>
+            </a>
+            <a href="#models-scopes-default">
+              <div>default scopes</div>
+            </a>
           </nav>
         </nav>
 
         <nav>
           <a className="subgroup-title serializers" href="#serializers">
-            serializers
+            <div>serializers</div>
           </a>
-          <a href="#serializers-generating">generating</a>
-          <a href="#serializers-attributes">attributes</a>
-          <a href="#serializers-usage">usage</a>
+          <a href="#serializers-generating">
+            <div>generating</div>
+          </a>
+          <a href="#serializers-attributes">
+            <div>attributes</div>
+          </a>
+          <a href="#serializers-usage">
+            <div>usage</div>
+          </a>
         </nav>
 
         <nav>
           <a className="subgroup-title cli" href="#cli">
-            cli
+            <div>cli</div>
           </a>
-          <a href="#cli-generators">generators</a>
-          <a href="#cli-spec-runners">spec runners</a>
-          <a href="#cli-dev-server">dev server</a>
-          <a href="#cli-repl">repl</a>
-          <a href="#cli-introspection">introspection</a>
+          <a href="#cli-generators">
+            <div>generators</div>
+          </a>
+          <a href="#cli-spec-runners">
+            <div>spec runners</div>
+          </a>
+          <a href="#cli-dev-server">
+            <div>dev server</div>
+          </a>
+          <a href="#cli-repl">
+            <div>repl</div>
+          </a>
+          <a href="#cli-introspection">
+            <div>introspection</div>
+          </a>
         </nav>
 
         <nav>
           <a className="subgroup-title database" href="#database">
-            database
+            <div>database</div>
           </a>
-          <a href="#database-configuration">configuration</a>
-          <a href="#database-kysely">kysely</a>
+          <a href="#database-configuration">
+            <div>configuration</div>
+          </a>
+          <a href="#database-kysely">
+            <div>kysely</div>
+          </a>
         </nav>
 
         <nav>
           <a className="subgroup-title specs" href="#specs">
-            specs
+            <div>specs</div>
           </a>
-          <a href="#specs-unit">unit</a>
-          <a href="#specs-feature">feature</a>
+          <a href="#specs-unit">
+            <div>unit</div>
+          </a>
+          <a href="#specs-feature">
+            <div>feature</div>
+          </a>
         </nav>
 
         <nav>
           <a className="subgroup-title deployment" href="#deployment">
-            deployment
+            <div>deployment</div>
           </a>
-          <a href="#deployment-server">as server</a>
-          <a href="#deployment-lambda">as lambda</a>
+          <a href="#deployment-server">
+            <div>as server</div>
+          </a>
+          <a href="#deployment-lambda">
+            <div>as lambda</div>
+          </a>
         </nav>
       </nav>
     </LeftSidebar>

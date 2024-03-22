@@ -1,5 +1,6 @@
 import React from 'react'
 import CodeExample from '../../code-example'
+import CodeExamples from '../../code-examples'
 
 export default function GuidesModelAssociations() {
   return (
@@ -12,7 +13,7 @@ export default function GuidesModelAssociations() {
       </p>
 
       <h4 id="models-associations-belongs-to">Belongs to association</h4>
-      <CodeExample
+      <CodeExamples
         id="models-associations-has-one-example"
         expandLevel={2}
         description={
@@ -24,7 +25,16 @@ export default function GuidesModelAssociations() {
             In this context, we would say that the `Post` belongs to the `User`.
           </p>
         }
-        codeExample={`
+        startingOption="basic"
+        options={[
+          { id: 'basic', label: 'basic' },
+          { id: 'foreign-key', label: 'foreign key' },
+          { id: 'primary-key-override', label: 'primary key override' },
+        ]}
+        codeExamples={[
+          {
+            id: 'basic',
+            example: `
 export default class Post extends Dream {
   public readonly get table() {
     return 'posts' as const
@@ -35,10 +45,52 @@ export default class Post extends Dream {
 
   @BelongsTo(() => User)
   public user: User
-  public user_id: number
+  public userId: number
 }
-`}
-      ></CodeExample>
+`,
+          },
+
+          {
+            id: 'foreign-key',
+            example: `
+export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
+  public id: number
+  public content: string | null
+
+  // this expects the Post model to have a field 'myUserId',
+  // which will point to the 'id' field on the User model
+  @BelongsTo(() => User, { foreignKey: 'myUserId' })
+  public user: User
+  public myUserId: number
+}
+`,
+          },
+
+          {
+            id: 'primary-key-override',
+            example: `
+export default class Post extends Dream {
+  public readonly get table() {
+    return 'posts' as const
+  }
+
+  public id: number
+  public content: string | null
+
+  // this expects the Post model to have a field 'userId',
+  // which will point to the 'uuid' field on the User model
+  @BelongsTo(() => User, { primaryKeyOverride: 'uuid' })
+  public user: User
+  public userId: number
+}
+`,
+          },
+        ]}
+      ></CodeExamples>
 
       <h4 id="models-associations-has-one">Has one association</h4>
       <CodeExample
